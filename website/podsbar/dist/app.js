@@ -36,3 +36,10 @@ document.querySelectorAll('a[href="#install-note"]').forEach(link => link.addEve
 }));
 window.addEventListener('hashchange', openLinkedDetail);
 openLinkedDetail();
+const film = document.querySelector('.film-video');
+if (film && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) film.play().catch(() => {});
+    else film.pause();
+  }, { threshold: 0.5 }).observe(film);
+}

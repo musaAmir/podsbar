@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "ef7f629d-bcef-4bb4-826b-e8fc1b329b5a",
-  "currentRevision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
+  "currentRevision": "9648c662-d4ce-45a9-8c9e-c7e6094b6226",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -73,20 +73,20 @@
       "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/5f/5f5fdc5fd1ef5d606744589b59ab05ea9391a43e9ccc58454fc3b787ba57bdd6"
     },
     "compositions/frames/01-hook.html": {
-      "hash": "8da96227e755e254cddfb87195c4861073e9012b6d601d8a9d216a0916581d70",
-      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/8d/8da96227e755e254cddfb87195c4861073e9012b6d601d8a9d216a0916581d70"
+      "hash": "452b26c8ca725c79c1460d2d28169f46ced870f6acdd088bc391bfd226df535f",
+      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/45/452b26c8ca725c79c1460d2d28169f46ced870f6acdd088bc391bfd226df535f"
     },
     "compositions/frames/02-problem.html": {
-      "hash": "f793cfe324576f5bea2aa17b2222778b6e365029ea800599481d6417754f48dc",
-      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/f7/f793cfe324576f5bea2aa17b2222778b6e365029ea800599481d6417754f48dc"
+      "hash": "be151b41238f2376b0c1569463b15b52e9f698a225f4602b60d6e15a4f29051b",
+      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/be/be151b41238f2376b0c1569463b15b52e9f698a225f4602b60d6e15a4f29051b"
     },
     "compositions/frames/03-glance.html": {
-      "hash": "94c3ee983cb4f597f663d75327932a8815813933cfb52474ddd5ab9e1f76d7c5",
-      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/94/94c3ee983cb4f597f663d75327932a8815813933cfb52474ddd5ab9e1f76d7c5"
+      "hash": "55b532aa48627bb1ea546eeb9aa78feb8deefa4da19b143f29ce1dbdaf414504",
+      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/55/55b532aa48627bb1ea546eeb9aa78feb8deefa4da19b143f29ce1dbdaf414504"
     },
     "compositions/frames/04-cta.html": {
-      "hash": "f02ee138981a339f0556519dfd7f7dfd9afa4f8edcbfc13c8f59e34aaaba6b26",
-      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/f0/f02ee138981a339f0556519dfd7f7dfd9afa4f8edcbfc13c8f59e34aaaba6b26"
+      "hash": "8175379812369210c451f0258fd44a83bdd0a3f34edb170cddd2de12254e8783",
+      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/81/8175379812369210c451f0258fd44a83bdd0a3f34edb170cddd2de12254e8783"
     },
     "frame.md": {
       "hash": "daef113c9152a075a42c80188ba57076bb5c781aa996358daa958d8e8e5e0d4e",
@@ -97,16 +97,16 @@
       "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/44/44d4e8dcefebce0a13f5afa82aa270b0b19a1d3f82e434f92616010cee775dc4"
     },
     "index.html": {
-      "hash": "fece4a6101205bb8f87b4c042a50801441be4fd32745abec6560a3738532430c",
-      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/fe/fece4a6101205bb8f87b4c042a50801441be4fd32745abec6560a3738532430c"
+      "hash": "ded06b4497b21f3091e5d1673b935ef60dece526f073df389ed30260c1c4affe",
+      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/de/ded06b4497b21f3091e5d1673b935ef60dece526f073df389ed30260c1c4affe"
     },
     "meta.json": {
       "hash": "1be61e58ff4586da89ae63dc47c51b7ddb94e16a94f72389b361b294ca79943c",
       "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/1b/1be61e58ff4586da89ae63dc47c51b7ddb94e16a94f72389b361b294ca79943c"
     },
     "package.json": {
-      "hash": "cf3ab52ef09b39b5149f13c86c7d050e46fb8b5501c4b90f00f9fe934fa0c31e",
-      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/cf/cf3ab52ef09b39b5149f13c86c7d050e46fb8b5501c4b90f00f9fe934fa0c31e"
+      "hash": "446d0fb7ada3cb02a13898a1881c6360de70dbc07b10d2127608b78776f08e7e",
+      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/44/446d0fb7ada3cb02a13898a1881c6360de70dbc07b10d2127608b78776f08e7e"
     },
     "assets/music/a-drop.wav": {
       "hash": "68e0bf62c14404e2bbb72c3abe3b33b8f36dd1faf13eef0dbe40b8717c6813c0",
@@ -252,12 +252,73 @@
           "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/5d/5d9a7596108cfb76ff115576086d0c9cb42425dd62a2c4b200e370a7b1e807e9"
         }
       }
+    },
+    "6b1c2d4e-c148-41c2-9abb-5f350f2a847c": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792155200041,
+      "endedAt": 1792155200042,
+      "files": {
+        "package.json": {
+          "before": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/cf/cf3ab52ef09b39b5149f13c86c7d050e46fb8b5501c4b90f00f9fe934fa0c31e",
+          "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/44/446d0fb7ada3cb02a13898a1881c6360de70dbc07b10d2127608b78776f08e7e"
+        }
+      }
+    },
+    "3b2d3006-0f22-4a12-bbe7-a5fee3110bbe": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792155255470,
+      "endedAt": 1792155255479,
+      "files": {
+        "compositions/frames/01-hook.html": {
+          "before": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/8d/8da96227e755e254cddfb87195c4861073e9012b6d601d8a9d216a0916581d70",
+          "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/45/452b26c8ca725c79c1460d2d28169f46ced870f6acdd088bc391bfd226df535f"
+        },
+        "compositions/frames/02-problem.html": {
+          "before": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/f7/f793cfe324576f5bea2aa17b2222778b6e365029ea800599481d6417754f48dc",
+          "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/be/be151b41238f2376b0c1569463b15b52e9f698a225f4602b60d6e15a4f29051b"
+        },
+        "compositions/frames/03-glance.html": {
+          "before": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/94/94c3ee983cb4f597f663d75327932a8815813933cfb52474ddd5ab9e1f76d7c5",
+          "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/82/82fb5eb2ec88b9d9f7e5d6cba115f96ea1b9e2c2d8b905fb6a1fa6ca88c2061b"
+        },
+        "compositions/frames/04-cta.html": {
+          "before": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/f0/f02ee138981a339f0556519dfd7f7dfd9afa4f8edcbfc13c8f59e34aaaba6b26",
+          "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/81/8175379812369210c451f0258fd44a83bdd0a3f34edb170cddd2de12254e8783"
+        },
+        "index.html": {
+          "before": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/fe/fece4a6101205bb8f87b4c042a50801441be4fd32745abec6560a3738532430c",
+          "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/de/ded06b4497b21f3091e5d1673b935ef60dece526f073df389ed30260c1c4affe"
+        }
+      }
+    },
+    "9648c662-d4ce-45a9-8c9e-c7e6094b6226": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792155412707,
+      "endedAt": 1792155412707,
+      "files": {
+        "compositions/frames/03-glance.html": {
+          "before": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/82/82fb5eb2ec88b9d9f7e5d6cba115f96ea1b9e2c2d8b905fb6a1fa6ca88c2061b",
+          "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/55/55b532aa48627bb1ea546eeb9aa78feb8deefa4da19b143f29ce1dbdaf414504"
+        }
+      }
     }
   },
   "checks": {
     "latest": {
-      "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
-      "id": "9a27428f-f60f-4d4f-9de1-84adc9bf480b"
+      "revision": "9648c662-d4ce-45a9-8c9e-c7e6094b6226",
+      "id": "94461ec6-6fe5-4398-b8a1-6395ee86c562"
     },
     "revisions": {
       "77bac888-876e-4cba-a7b6-caeffbf02cfd": [
@@ -294,7 +355,6 @@
         {
           "id": "9a27428f-f60f-4d4f-9de1-84adc9bf480b",
           "scope": "project",
-          "report": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/checks/9a27428f-f60f-4d4f-9de1-84adc9bf480b.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -315,6 +375,150 @@
           "contentHash": "b3b570bff3ea60f0d054b6df20e80a1aaac8abf09d6d11fb194c63d738b2a4e5",
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
+        }
+      ],
+      "6b1c2d4e-c148-41c2-9abb-5f350f2a847c": [
+        {
+          "id": "952c36f0-133d-4174-bf2c-8fd6a2f325b5",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792155206182,
+          "contentHash": "b3b570bff3ea60f0d054b6df20e80a1aaac8abf09d6d11fb194c63d738b2a4e5",
+          "revision": "6b1c2d4e-c148-41c2-9abb-5f350f2a847c",
+          "inputFingerprint": "99aa0f3b8a47900f9c64b522f1a3fe2a312a9b0f66f0f5ddbf89fc6317c1f783",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "5a3e12ef-1d82-4872-b659-fbabd14a4d96"
+        }
+      ],
+      "3b2d3006-0f22-4a12-bbe7-a5fee3110bbe": [
+        {
+          "id": "22a2b419-2e16-4c61-9836-f89e3b6ec8b5",
+          "scope": "project",
+          "report": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/checks/22a2b419-2e16-4c61-9836-f89e3b6ec8b5.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792155262131,
+          "contentHash": "2f52d6f86695e23470625dcd3093c9d4b15a57d29ba400be4ac6beb9b958e69a",
+          "revision": "3b2d3006-0f22-4a12-bbe7-a5fee3110bbe",
+          "inputFingerprint": "61b4500d5f36536fd8976c403609a6ce16b1ddfa225f34f12ad1651cd4ca69e3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "id": "a48c51c2-da00-47de-9089-7c60102bc1d1",
+          "scope": "project",
+          "report": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/checks/a48c51c2-da00-47de-9089-7c60102bc1d1.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792155274491,
+          "contentHash": "2f52d6f86695e23470625dcd3093c9d4b15a57d29ba400be4ac6beb9b958e69a",
+          "revision": "3b2d3006-0f22-4a12-bbe7-a5fee3110bbe",
+          "inputFingerprint": "61b4500d5f36536fd8976c403609a6ce16b1ddfa225f34f12ad1651cd4ca69e3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "9648c662-d4ce-45a9-8c9e-c7e6094b6226": [
+        {
+          "id": "461bf72e-5ed6-465c-a88c-36efca4e8712",
+          "scope": "project",
+          "report": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/checks/461bf72e-5ed6-465c-a88c-36efca4e8712.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792155418557,
+          "contentHash": "27cba5356e93a22b02c3116a705bdcffaa2c5d08b68c884a721cb83ab0d8c04f",
+          "revision": "9648c662-d4ce-45a9-8c9e-c7e6094b6226",
+          "inputFingerprint": "12627eb85a7a7dab38acbe3e17f0a19a786a7195e8cbcc8f9223fa363842abbc",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "id": "94461ec6-6fe5-4398-b8a1-6395ee86c562",
+          "scope": "project",
+          "report": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/checks/94461ec6-6fe5-4398-b8a1-6395ee86c562.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792155431137,
+          "contentHash": "27cba5356e93a22b02c3116a705bdcffaa2c5d08b68c884a721cb83ab0d8c04f",
+          "revision": "9648c662-d4ce-45a9-8c9e-c7e6094b6226",
+          "inputFingerprint": "12627eb85a7a7dab38acbe3e17f0a19a786a7195e8cbcc8f9223fa363842abbc",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
@@ -351,10 +555,7 @@
     ]
   },
   "snapshots": {
-    "latest": {
-      "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
-      "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-15"
-    },
+    "latest": null,
     "revisions": {
       "02b78b06-0d5a-4586-8e33-c082da49b5db": [
         {
@@ -677,7 +878,6 @@
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-0",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-00-at-1.2s.png",
           "time": 1.2,
           "metadata": {
             "width": 1920,
@@ -692,12 +892,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-1",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-01-at-2.3s.png",
           "time": 2.3,
           "metadata": {
             "width": 1920,
@@ -712,12 +913,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-2",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-02-at-3.6s.png",
           "time": 3.6,
           "metadata": {
             "width": 1920,
@@ -732,12 +934,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-3",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-03-at-3.85s.png",
           "time": 3.85,
           "metadata": {
             "width": 1920,
@@ -752,12 +955,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-4",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-04-at-4.4s.png",
           "time": 4.4,
           "metadata": {
             "width": 1920,
@@ -772,12 +976,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-5",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-05-at-5.4s.png",
           "time": 5.4,
           "metadata": {
             "width": 1920,
@@ -792,12 +997,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-6",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-06-at-5.65s.png",
           "time": 5.65,
           "metadata": {
             "width": 1920,
@@ -812,12 +1018,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-7",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-07-at-6.8s.png",
           "time": 6.8,
           "metadata": {
             "width": 1920,
@@ -832,12 +1039,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-8",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-08-at-8s.png",
           "time": 8,
           "metadata": {
             "width": 1920,
@@ -852,12 +1060,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-9",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-09-at-9.5s.png",
           "time": 9.5,
           "metadata": {
             "width": 1920,
@@ -872,12 +1081,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-10",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-10-at-10.8s.png",
           "time": 10.8,
           "metadata": {
             "width": 1920,
@@ -892,12 +1102,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-11",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-11-at-11.1s.png",
           "time": 11.1,
           "metadata": {
             "width": 1920,
@@ -912,12 +1123,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-12",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-12-at-12s.png",
           "time": 12,
           "metadata": {
             "width": 1920,
@@ -932,12 +1144,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-13",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-13-at-13.75s.png",
           "time": 13.75,
           "metadata": {
             "width": 1920,
@@ -952,12 +1165,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-14",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-14-at-14.9s.png",
           "time": 14.9,
           "metadata": {
             "width": 1920,
@@ -972,12 +1186,13 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         },
         {
           "scope": "full",
           "id": "7f45867d-ce78-4c13-8eaf-c9f580593924-15",
-          "image": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/snapshots/99ad3041-8d41-4b2a-ad51-0f7eb72c9005/frame-15-at-14.55s.png",
           "time": 14.55,
           "metadata": {
             "width": 1920,
@@ -992,7 +1207,9 @@
           "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
           "inputFingerprint": "3d2ef12cc548612db221550842de6061739f6c2c727b97f08425c58b58f35240",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         }
       ]
     },
@@ -1000,15 +1217,15 @@
   },
   "renders": {
     "latest": {
-      "id": "d6bde46a-7eee-41bc-ac7f-699a9413996e",
-      "completedAt": 1792123975420,
-      "output": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/renders/video-final.mp4",
+      "id": "22cfa392-c136-4910-8e9f-8c9bc544c637",
+      "completedAt": 1792155444028,
+      "output": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/renders/podsbar-launch-light.mp4",
       "status": "completed",
-      "revision": "b6db40e7-76ee-46b1-9bbc-a5047c9dc224"
+      "revision": "9648c662-d4ce-45a9-8c9e-c7e6094b6226"
     },
     "retainedRevisions": [
-      "b6db40e7-76ee-46b1-9bbc-a5047c9dc224",
-      "2e314518-39b8-4c4d-8a68-d2acb90d800f"
+      "9648c662-d4ce-45a9-8c9e-c7e6094b6226",
+      "3b2d3006-0f22-4a12-bbe7-a5fee3110bbe"
     ]
   },
   "pendingArtifactCleanup": []

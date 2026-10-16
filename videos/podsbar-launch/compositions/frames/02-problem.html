@@ -2,21 +2,21 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
   <style>
     @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); }
-    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #F5F5F7; }
-    .p02-bg { position: absolute; inset: 0; background: #0B0C0F; }
-    .p02-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 36px 36px;
+    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #242527; }
+    .p02-bg { position: absolute; inset: 0; background: #F8F7F4; }
+    .p02-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(36,37,39,0.09) 1px, transparent 1px) 0 0 / 36px 36px;
       -webkit-mask-image: radial-gradient(ellipse at center, #000 15%, transparent 65%); mask-image: radial-gradient(ellipse at center, #000 15%, transparent 65%); }
     .p02-glow { position: absolute; left: 460px; top: 90px; width: 1000px; height: 900px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,69,58,0.14), transparent 65%); }
+      background: radial-gradient(circle, rgba(214,88,72,0.10), transparent 65%); }
     .p02-stage { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-bottom: 120px; }
     .p02-row { position: relative; display: flex; gap: 90px; align-items: flex-end; }
     .p02-step { display: flex; flex-direction: column; align-items: center; gap: 34px; }
     .p02-icon { width: 120px; height: 120px; border-radius: 30px; display: flex; align-items: center; justify-content: center;
-      background: rgba(30,31,36,0.85); border: 1px solid rgba(255,255,255,0.10); box-shadow: 0 30px 60px rgba(0,0,0,0.45); }
+      background: #FFFFFF; border: 1px solid #DEDDD8; box-shadow: 0 24px 50px -20px rgba(94,91,87,0.30); }
     .p02-icon svg { width: 60px; height: 60px; }
     .p02-word { font-size: 140px; font-weight: 800; letter-spacing: -0.055em; line-height: 1; }
-    .p02-strike { position: absolute; left: -30px; right: -30px; bottom: 62px; height: 12px; border-radius: 6px; background: #FF453A;
-      box-shadow: 0 0 30px rgba(255,69,58,0.6); transform-origin: left center; }
+    .p02-strike { position: absolute; left: -30px; right: -30px; bottom: 62px; height: 12px; border-radius: 6px; background: #D65848;
+      box-shadow: 0 0 24px rgba(214,88,72,0.35); transform-origin: left center; }
   </style>
 
   <div id="root" data-composition-id="02-problem" data-width="1920" data-height="1080">
@@ -28,22 +28,22 @@
       <div class="p02-row" id="p02-row">
         <div class="p02-step">
           <div class="p02-icon">
-            <svg viewBox="0 0 24 24" fill="#F5F5F7"><path d="M5 2.5v17.2l4.3-4.1 2.9 6.6 2.6-1.1-2.9-6.5h6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#242527"><path d="M5 2.5v17.2l4.3-4.1 2.9 6.6 2.6-1.1-2.9-6.5h6z"/></svg>
           </div>
           <div class="p02-word">Click.</div>
         </div>
         <div class="p02-step">
           <div class="p02-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F5F5F7" stroke-width="1.8">
-              <rect x="2.5" y="5" width="19" height="6" rx="3"/><circle cx="18.5" cy="8" r="1.8" fill="#F5F5F7"/>
-              <rect x="2.5" y="13" width="19" height="6" rx="3"/><circle cx="5.5" cy="16" r="1.8" fill="#F5F5F7"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#242527" stroke-width="1.8">
+              <rect x="2.5" y="5" width="19" height="6" rx="3"/><circle cx="18.5" cy="8" r="1.8" fill="#242527"/>
+              <rect x="2.5" y="13" width="19" height="6" rx="3"/><circle cx="5.5" cy="16" r="1.8" fill="#242527"/>
             </svg>
           </div>
           <div class="p02-word">Open.</div>
         </div>
         <div class="p02-step">
           <div class="p02-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#F5F5F7" stroke-width="2.2" stroke-linecap="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#242527" stroke-width="2.2" stroke-linecap="round">
               <circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/>
             </svg>
           </div>

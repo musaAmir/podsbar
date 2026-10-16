@@ -4,24 +4,24 @@
     @font-face { font-family: "Inter"; font-weight: 500; src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2"); }
     @font-face { font-family: "Inter"; font-weight: 600; src: url("assets/fonts/inter-latin-600-normal.woff2") format("woff2"); }
     @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); }
-    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #F5F5F7; }
-    .c04-bg { position: absolute; inset: 0; background: #0B0C0F; }
-    .c04-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 36px 36px;
+    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #242527; }
+    .c04-bg { position: absolute; inset: 0; background: #F8F7F4; }
+    .c04-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(36,37,39,0.09) 1px, transparent 1px) 0 0 / 36px 36px;
       -webkit-mask-image: radial-gradient(ellipse at center, #000 15%, transparent 60%); mask-image: radial-gradient(ellipse at center, #000 15%, transparent 60%); }
     .c04-glow { position: absolute; left: 360px; top: 40px; width: 900px; height: 900px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(91,216,122,0.30), transparent 62%); }
+      background: radial-gradient(circle, rgba(92,140,105,0.18), transparent 62%); }
     .c04-stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 150px; }
     .c04-row { display: flex; align-items: center; gap: 50px; }
     .c04-iconwrap { position: relative; width: 300px; height: 300px; flex: none; }
-    .c04-icon { position: absolute; inset: 0; width: 300px; height: 300px; filter: drop-shadow(0 40px 60px rgba(0,0,0,0.6)); }
-    .c04-ring { position: absolute; inset: 20px; border-radius: 70px; border: 4px solid #5BD87A; }
-    .c04-text { width: 760px; overflow: hidden; }
+    .c04-icon { position: absolute; inset: 0; width: 300px; height: 300px; filter: drop-shadow(0 30px 40px rgba(94,91,87,0.30)); }
+    .c04-ring { position: absolute; inset: 20px; border-radius: 70px; border: 4px solid #5C8C69; }
+    .c04-text { width: 650px; overflow: hidden; }
     .c04-word { font-size: 170px; font-weight: 800; letter-spacing: -0.06em; line-height: 1.05; }
-    .c04-tag { margin-top: 6px; font-size: 42px; font-weight: 500; letter-spacing: -0.02em; color: #8E8E93; }
+    .c04-tag { margin-top: 6px; font-size: 42px; font-weight: 500; letter-spacing: -0.02em; color: #747471; }
     .c04-chips { margin-top: 70px; display: flex; gap: 22px; }
     .c04-chip { display: flex; align-items: center; gap: 14px; padding: 16px 30px; border-radius: 999px; font-size: 28px; font-weight: 600;
-      background: rgba(30,31,36,0.85); border: 1px solid rgba(255,255,255,0.10); }
-    .c04-dot { width: 12px; height: 12px; border-radius: 50%; background: #5BD87A; box-shadow: 0 0 14px rgba(91,216,122,0.8); }
+      background: #FFFFFF; border: 1px solid #DEDDD8; }
+    .c04-dot { width: 12px; height: 12px; border-radius: 50%; background: #5C8C69; }
   </style>
 
   <div id="root" data-composition-id="04-cta" data-width="1920" data-height="1080">
@@ -55,7 +55,7 @@
       const FINAL_HIT = 2.70;
       const tl = gsap.timeline({ paused: true });
       // The icon starts centred: shift it right by half of (text width + gap).
-      const centerShift = (760 + 50) / 2;
+      const centerShift = (650 + 50) / 2;
 
       tl.fromTo("#c04-glow", { opacity: 0.3, scale: 0.8 }, { opacity: 0.8, scale: 1.05, duration: FINAL_HIT, ease: "sine.out" }, 0);
 

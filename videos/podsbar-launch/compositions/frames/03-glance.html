@@ -4,44 +4,44 @@
     @font-face { font-family: "Inter"; font-weight: 500; src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2"); }
     @font-face { font-family: "Inter"; font-weight: 600; src: url("assets/fonts/inter-latin-600-normal.woff2") format("woff2"); }
     @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); }
-    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #F5F5F7; }
-    .g03-bg { position: absolute; inset: 0; background: #0B0C0F; }
-    .g03-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 36px 36px;
+    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #242527; }
+    .g03-bg { position: absolute; inset: 0; background: #F8F7F4; }
+    .g03-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(36,37,39,0.09) 1px, transparent 1px) 0 0 / 36px 36px;
       -webkit-mask-image: radial-gradient(ellipse at 60% 30%, #000 10%, transparent 65%); mask-image: radial-gradient(ellipse at 60% 30%, #000 10%, transparent 65%); }
     .g03-glow { position: absolute; left: 700px; top: -300px; width: 1000px; height: 1000px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(91,216,122,0.28), transparent 62%); }
+      background: radial-gradient(circle, rgba(92,140,105,0.18), transparent 62%); }
     .g03-glow2 { position: absolute; left: -300px; top: 500px; width: 900px; height: 900px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(91,216,122,0.10), transparent 62%); }
+      background: radial-gradient(circle, rgba(197,210,218,0.45), transparent 62%); }
 
     .g03-scene { position: absolute; inset: 0; perspective: 1800px; perspective-origin: 50% 0%; }
-    .g03-camera { position: absolute; inset: 0; transform-origin: 62% 18%; }
+    .g03-camera { position: absolute; inset: 0; transform-origin: 50% 18%; }
 
     /* macOS menu bar at 5x — measurements follow MenuBarIcon.swift Metrics. */
     .g03-bar { position: absolute; left: 160px; top: 140px; width: 1600px; height: 120px; border-radius: 28px;
       display: flex; align-items: center; justify-content: space-between; padding: 0 44px 0 52px;
-      background: linear-gradient(180deg, rgba(48,49,56,0.92), rgba(30,31,36,0.92));
-      border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 40px 120px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(244,243,239,0.92));
+      border: 1px solid #DEDDD8; box-shadow: 0 40px 90px -40px rgba(94,91,87,0.35), inset 0 1px 0 #FFFFFF;
       transform-origin: 50% 0%; }
-    .g03-menus { display: flex; gap: 44px; font-size: 44px; font-weight: 500; letter-spacing: -0.01em; color: rgba(245,245,247,0.55); }
-    .g03-menus b { font-weight: 800; color: rgba(245,245,247,0.8); }
-    .g03-status { display: flex; align-items: center; gap: 40px; font-size: 44px; font-weight: 500; color: rgba(245,245,247,0.85); }
+    .g03-menus { display: flex; gap: 44px; font-size: 44px; font-weight: 500; letter-spacing: -0.01em; color: rgba(36,37,39,0.55); }
+    .g03-menus b { font-weight: 800; color: #242527; }
+    .g03-status { display: flex; align-items: center; gap: 40px; font-size: 44px; font-weight: 500; color: rgba(36,37,39,0.85); }
     .g03-status svg { width: 52px; height: 52px; }
 
     .g03-item { position: relative; height: 96px; padding: 0 22px; display: flex; align-items: center; border-radius: 20px; }
-    .g03-hilite { position: absolute; inset: 0; border-radius: 20px; background: rgba(255,255,255,0.14); }
-    .g03-glyph { position: relative; display: flex; align-items: center; height: 90px; color: #FFFFFF; }
+    .g03-hilite { position: absolute; inset: 0; border-radius: 20px; background: rgba(36,37,39,0.08); }
+    .g03-glyph { position: relative; display: flex; align-items: center; height: 90px; color: #242527; }
     .g03-num { font-size: 52px; font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; display: inline-block; width: 62px; text-align: right; }
     .g03-num.g03-r { text-align: left; }
     .g03-let { font-size: 40px; font-weight: 600; opacity: 0.55; }
     .g03-pods { display: flex; gap: 12.5px; margin: 0 17.5px; }
-    .g03-pod { position: relative; width: 35px; height: 65px; border: 5px solid #FFFFFF; border-radius: 18px; }
+    .g03-pod { position: relative; width: 35px; height: 65px; border: 5px solid #242527; border-radius: 18px; }
     .g03-pod-in { position: absolute; inset: 3px; border-radius: 10px; overflow: hidden; }
-    .g03-fill { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; background: #FFFFFF; transform-origin: 50% 100%; }
+    .g03-fill { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; background: #242527; transform-origin: 50% 100%; }
 
     /* Popover at 2.4x — PopoverView.swift is 244pt wide with 12pt padding. */
     .g03-pop { position: absolute; top: 118px; left: 50%; margin-left: -293px; width: 586px; padding: 29px; border-radius: 30px;
       background: linear-gradient(180deg, rgba(44,45,52,0.97), rgba(32,33,38,0.97));
-      border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 50px 120px rgba(0,0,0,0.65); transform-origin: 50% 0%;
+      border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 40px 90px -20px rgba(47,47,57,0.45); transform-origin: 50% 0%;
       font-size: 26px; font-weight: 500; color: rgba(245,245,247,0.9); }
     .g03-title { font-size: 31px; font-weight: 600; color: #F5F5F7; margin-bottom: 18px; }
     .g03-row { display: flex; align-items: center; height: 46px; }
@@ -58,8 +58,8 @@
     .g03-copy { position: absolute; left: 170px; top: 430px; width: 700px; }
     .g03-head { font-size: 132px; font-weight: 800; letter-spacing: -0.055em; line-height: 1; }
     .g03-head span { display: inline-block; }
-    .g03-green { color: #5BD87A; text-shadow: 0 0 60px rgba(91,216,122,0.45); }
-    .g03-body { margin-top: 30px; font-size: 38px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.35; color: #8E8E93; }
+    .g03-green { color: #5C8C69; }
+    .g03-body { margin-top: 30px; font-size: 38px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.35; color: #747471; }
   </style>
 
   <div id="root" data-composition-id="03-glance" data-width="1920" data-height="1080">
@@ -79,8 +79,8 @@
         <div class="g03-bar" id="g03-bar">
           <div class="g03-menus"><b>Finder</b><span>File</span><span>Edit</span><span>View</span><span>Go</span></div>
           <div class="g03-status">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(245,245,247,0.85)" stroke-width="2.2" stroke-linecap="round">
-              <path d="M2.5 9a14 14 0 0 1 19 0"/><path d="M5.8 12.6a9 9 0 0 1 12.4 0"/><path d="M9.1 16.1a4.2 4.2 0 0 1 5.8 0"/><circle cx="12" cy="19.3" r="1.1" fill="rgba(245,245,247,0.85)" stroke="none"/>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(36,37,39,0.85)" stroke-width="2.2" stroke-linecap="round">
+              <path d="M2.5 9a14 14 0 0 1 19 0"/><path d="M5.8 12.6a9 9 0 0 1 12.4 0"/><path d="M9.1 16.1a4.2 4.2 0 0 1 5.8 0"/><circle cx="12" cy="19.3" r="1.1" fill="rgba(36,37,39,0.85)" stroke="none"/>
             </svg>
             <div class="g03-item" id="g03-item">
               <div class="g03-hilite" id="g03-hilite"></div>
@@ -127,7 +127,7 @@
       // Bar 1 — the menu bar swings down in 3D; the camera starts close on the glyph and settles by bar 2.
       tl.fromTo("#g03-bar", { y: -260, rotationX: 62, opacity: 0 },
         { y: 0, rotationX: 0, opacity: 1, duration: 1.0, ease: "expo.out" }, 0);
-      tl.fromTo("#g03-camera", { scale: 1.55, x: -260, y: 60 },
+      tl.fromTo("#g03-camera", { scale: 1.12, x: 0, y: 30 },
         { scale: 1, x: 0, y: 0, duration: B(4) - 0.1, ease: "power3.inOut" }, 0.1);
 
       // Capsules fill from empty while the numbers count up — the app's own glyph, alive.
