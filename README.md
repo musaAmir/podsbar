@@ -8,6 +8,14 @@ AirPods battery, right in your Mac’s menu bar.
 
 Free and open source. Requires macOS 14+. Supports Apple silicon and Intel.
 
+
+See it in action:
+
+
+https://github.com/user-attachments/assets/4e9e4c1c-df37-4c14-bd9a-b653186aa67c
+
+
+
 ## Install
 
 Download the ZIP, unzip it, and move **PodsBar.app** to **Applications**. Open the app to see your battery levels in the menu bar.
