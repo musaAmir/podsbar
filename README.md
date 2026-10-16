@@ -7,6 +7,12 @@ percentage next to it.
 
 <img src="docs/popover.png" alt="PodsBar popover" width="260">
 
+## Website
+
+Visit **https://musaamir.github.io/podsbar/**. The website deploys automatically
+from `website/podsbar/dist/` when changes are pushed to `main`. See the
+[website guide](website/podsbar/README.md) for editing and deployment details.
+
 ## Install
 
 macOS 14+. Download the app ZIP from the [latest release](https://github.com/musaAmir/podsbar/releases/latest),
