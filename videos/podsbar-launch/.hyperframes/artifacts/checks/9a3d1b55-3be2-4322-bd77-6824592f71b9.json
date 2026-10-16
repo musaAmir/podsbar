@@ -1,0 +1,575 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 8,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"h01-bg\" data-start=\"0\" data-track-index=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/compositions/frames/01-hook.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "gsap_repeated_fromto_without_baseline",
+        "severity": "warning",
+        "message": "2 tl.fromTo() calls target \"#h01-num\" with no stable baseline. The last-authored fromTo \"from\" values become the element's resting state for any seek before the first tween actually runs, because GSAP applies fromTo from-values at authoring time (immediateRender), not at tween position.",
+        "selector": "#h01-num",
+        "dataAttributes": {},
+        "sourceFile": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/compositions/frames/01-hook.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add `immediateRender: false` to every fromTo except the earliest-positioned one (at 1.35s), so pre-first-tween seeks keep its \"from\" values. A hiding `tl.set(..., 0)` baseline trips gsap_timeline_set_initial_hide, and a `gsap.set` authored before the fromTo calls is overwritten by them."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"p02-bg\" data-start=\"0\" data-track-index=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/compositions/frames/02-problem.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"p02-stage\" data-start=\"0\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/compositions/frames/02-problem.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"g03-bg\" data-start=\"0\" data-track-index=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/compositions/frames/03-glance.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"g03-scene\" data-start=\"0\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/compositions/frames/03-glance.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"c04-bg\" data-start=\"0\" data-track-index=\"0\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/compositions/frames/04-cta.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      },
+      {
+        "code": "studio_missing_editable_id",
+        "severity": "warning",
+        "message": "<div class=\"c04-stage\" data-start=\"0\" data-track-index=\"1\"> has no id, so Studio cannot use a stable edit target for its timeline and canvas controls.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/compositions/frames/04-cta.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0,
+        "fixHint": "Add a stable, human-readable id such as id=\"hero-title\" or id=\"scene-1-card\" to every timeline-visible element you want agents or Studio to edit."
+      }
+    ],
+    "filesScanned": 5
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 9,
+    "findings": [
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 5.833,
+        "selector": "#p02-row > div:nth-of-type(1) > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 277.71,
+          "top": 404.99,
+          "right": 631.16,
+          "bottom": 575.26,
+          "width": 353.46,
+          "height": 170.27
+        },
+        "containerSelector": "#p02-strike",
+        "text": "Click.",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/02-problem.html",
+        "bbox": {
+          "x": 277.71,
+          "y": 404.99,
+          "width": 353.46,
+          "height": 170.27
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 5.833,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 5.833,
+        "selector": "#p02-row > div:nth-of-type(2) > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 721.31,
+          "top": 404.99,
+          "right": 1103.29,
+          "bottom": 575.26,
+          "width": 381.99,
+          "height": 170.27
+        },
+        "containerSelector": "#p02-strike",
+        "text": "Open.",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/02-problem.html",
+        "bbox": {
+          "x": 721.31,
+          "y": 404.99,
+          "width": 381.99,
+          "height": 170.27
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 5.833,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.833
+        ]
+      },
+      {
+        "code": "text_occluded",
+        "severity": "info",
+        "time": 5.833,
+        "selector": "#p02-row > div:nth-of-type(3) > div:nth-of-type(2)",
+        "message": "Text is hidden beneath an opaque element.",
+        "rect": {
+          "left": 1193.44,
+          "top": 404.99,
+          "right": 1642.29,
+          "bottom": 575.26,
+          "width": 448.86,
+          "height": 170.27
+        },
+        "containerSelector": "#p02-strike",
+        "text": "Squint.",
+        "fixHint": "Give the text its own zone, raise its stacking order above the covering element, or mark intentional layering with data-layout-allow-occlusion.",
+        "coveredFraction": 0.33,
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/02-problem.html",
+        "bbox": {
+          "x": 1193.44,
+          "y": 404.99,
+          "width": 448.86,
+          "height": 170.27
+        },
+        "firstSeen": 5.833,
+        "lastSeen": 5.833,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.833
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 7.5,
+        "selector": "div.g03-menus > b:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -538.32,
+          "top": 218.26,
+          "right": -331.1,
+          "bottom": 300.24,
+          "width": 207.22,
+          "height": 81.98
+        },
+        "containerSelector": "#root",
+        "text": "Finder",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 538.32
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/03-glance.html",
+        "bbox": {
+          "x": -538.32,
+          "y": 218.26,
+          "width": 207.22,
+          "height": 81.98
+        },
+        "firstSeen": 7.5,
+        "lastSeen": 7.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.5
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 7.5,
+        "selector": "div.g03-menus > span:nth-of-type(1)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -264.3,
+          "top": 218.26,
+          "right": -154.69,
+          "bottom": 300.24,
+          "width": 109.61,
+          "height": 81.98
+        },
+        "containerSelector": "#root",
+        "text": "File",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 264.3
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/03-glance.html",
+        "bbox": {
+          "x": -264.3,
+          "y": 218.26,
+          "width": 109.61,
+          "height": 81.98
+        },
+        "firstSeen": 7.5,
+        "lastSeen": 7.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.5
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 7.5,
+        "selector": "div.g03-menus > span:nth-of-type(2)",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -87.9,
+          "top": 218.26,
+          "right": 30.59,
+          "bottom": 300.24,
+          "width": 118.49,
+          "height": 81.98
+        },
+        "containerSelector": "#root",
+        "text": "Edit",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 87.9
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/03-glance.html",
+        "bbox": {
+          "x": -87.9,
+          "y": 218.26,
+          "width": 118.49,
+          "height": 81.98
+        },
+        "firstSeen": 7.5,
+        "lastSeen": 7.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.5
+        ]
+      },
+      {
+        "code": "panel_out_of_canvas",
+        "severity": "info",
+        "time": 7.5,
+        "selector": "#g03-bar",
+        "message": "Painted panel extends outside the composition canvas.",
+        "rect": {
+          "left": -618.78,
+          "top": 168.16,
+          "right": 1810.18,
+          "bottom": 350.33,
+          "width": 2428.96,
+          "height": 182.17
+        },
+        "containerSelector": "#root",
+        "text": "Finder File Edit View Go 82 L R 78 AirPods Pro L",
+        "fixHint": "Move the panel inward, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 618.78
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/03-glance.html",
+        "bbox": {
+          "x": -618.78,
+          "y": 168.16,
+          "width": 2428.96,
+          "height": 182.17
+        },
+        "firstSeen": 7.5,
+        "lastSeen": 7.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.5
+        ]
+      },
+      {
+        "code": "canvas_overflow",
+        "severity": "info",
+        "time": 12.5,
+        "selector": "#c04-word",
+        "message": "Text extends outside the composition canvas.",
+        "rect": {
+          "left": -43,
+          "top": 264.25,
+          "right": 590.27,
+          "bottom": 470.25,
+          "width": 633.27,
+          "height": 206
+        },
+        "containerSelector": "#root",
+        "text": "PodsBar",
+        "fixHint": "Move the text inward, reduce its size, or mark intentional off-canvas animation with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 43
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/04-cta.html",
+        "bbox": {
+          "x": -43,
+          "y": 264.25,
+          "width": 633.27,
+          "height": 206
+        },
+        "firstSeen": 12.5,
+        "lastSeen": 12.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          12.5
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 12.5,
+        "selector": "#c04-word",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -43,
+          "top": 278.25,
+          "right": 717,
+          "bottom": 456.75,
+          "width": 760,
+          "height": 178.5
+        },
+        "containerSelector": "div.c04-text",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 755,
+          "top": 278.25,
+          "right": 1515,
+          "bottom": 513.75,
+          "width": 760,
+          "height": 235.5
+        },
+        "overflow": {
+          "left": 798
+        },
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/04-cta.html",
+        "bbox": {
+          "x": -43,
+          "y": 278.25,
+          "width": 760,
+          "height": 178.5
+        },
+        "firstSeen": 12.5,
+        "lastSeen": 12.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          12.5
+        ]
+      }
+    ],
+    "duration": 15,
+    "samples": [
+      0.833,
+      2.5,
+      4.167,
+      5.833,
+      7.5,
+      9.167,
+      10.833,
+      12.5,
+      14.167
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 9,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0.833,
+      4.167,
+      7.5,
+      10.833,
+      14.167
+    ],
+    "checked": 43,
+    "passed": 43
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

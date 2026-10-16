@@ -1,0 +1,80 @@
+<template>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #F5F5F7; }
+    .p02-bg { position: absolute; inset: 0; background: #0B0C0F; }
+    .p02-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 36px 36px;
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 15%, transparent 65%); mask-image: radial-gradient(ellipse at center, #000 15%, transparent 65%); }
+    .p02-glow { position: absolute; left: 460px; top: 90px; width: 1000px; height: 900px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,69,58,0.14), transparent 65%); }
+    .p02-stage { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding-bottom: 120px; }
+    .p02-row { position: relative; display: flex; gap: 90px; align-items: flex-end; }
+    .p02-step { display: flex; flex-direction: column; align-items: center; gap: 34px; }
+    .p02-icon { width: 120px; height: 120px; border-radius: 30px; display: flex; align-items: center; justify-content: center;
+      background: rgba(30,31,36,0.85); border: 1px solid rgba(255,255,255,0.10); box-shadow: 0 30px 60px rgba(0,0,0,0.45); }
+    .p02-icon svg { width: 60px; height: 60px; }
+    .p02-word { font-size: 140px; font-weight: 800; letter-spacing: -0.055em; line-height: 1; }
+    .p02-strike { position: absolute; left: -30px; right: -30px; bottom: 62px; height: 12px; border-radius: 6px; background: #FF453A;
+      box-shadow: 0 0 30px rgba(255,69,58,0.6); transform-origin: left center; }
+  </style>
+
+  <div id="root" data-composition-id="02-problem" data-width="1920" data-height="1080">
+    <div id="p02-bg" class="p02-bg clip" data-start="0" data-duration="1.8" data-track-index="0">
+      <div class="p02-grid"></div>
+      <div class="p02-glow" id="p02-glow"></div>
+    </div>
+    <div id="p02-stage" class="p02-stage clip" data-start="0" data-duration="1.8" data-track-index="1">
+      <div class="p02-row" id="p02-row">
+        <div class="p02-step">
+          <div class="p02-icon">
+            <svg viewBox="0 0 24 24" fill="#F5F5F7"><path d="M5 2.5v17.2l4.3-4.1 2.9 6.6 2.6-1.1-2.9-6.5h6z"/></svg>
+          </div>
+          <div class="p02-word">Click.</div>
+        </div>
+        <div class="p02-step">
+          <div class="p02-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F5F5F7" stroke-width="1.8">
+              <rect x="2.5" y="5" width="19" height="6" rx="3"/><circle cx="18.5" cy="8" r="1.8" fill="#F5F5F7"/>
+              <rect x="2.5" y="13" width="19" height="6" rx="3"/><circle cx="5.5" cy="16" r="1.8" fill="#F5F5F7"/>
+            </svg>
+          </div>
+          <div class="p02-word">Open.</div>
+        </div>
+        <div class="p02-step">
+          <div class="p02-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#F5F5F7" stroke-width="2.2" stroke-linecap="round">
+              <circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/>
+            </svg>
+          </div>
+          <div class="p02-word">Squint.</div>
+        </div>
+        <div class="p02-strike" id="p02-strike"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // This frame is exactly one bar of music: a beat every 0.45s from its first frame.
+      const B = (n) => n * 0.45;
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo("#p02-glow", { opacity: 0.5, scale: 0.9 }, { opacity: 1, scale: 1.1, duration: 1.8, ease: "sine.inOut" }, 0);
+
+      // One step per beat.
+      gsap.utils.toArray(".p02-step").forEach((step, i) => {
+        tl.fromTo(step.querySelector(".p02-word"), { y: 50, opacity: 0, filter: "blur(12px)" },
+          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "expo.out" }, B(i));
+        tl.fromTo(step.querySelector(".p02-icon"), { y: 30, scale: 0.7, opacity: 0 },
+          { y: 0, scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, B(i));
+      });
+
+      // Beat 4: strike through all three.
+      tl.fromTo("#p02-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "expo.out" }, B(3));
+      tl.to(".p02-word, .p02-icon", { opacity: 0.35, duration: 0.3, ease: "power2.out" }, B(3) + 0.05);
+
+      window.__timelines["02-problem"] = tl;
+    })();
+  </script>
+</template>

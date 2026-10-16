@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "web-embed",
+      "confirmed_in": [
+        "podsbar-launch"
+      ],
+      "updated_at": "2026-10-15T15:24:57.301Z"
+    },
+    "aspect": {
+      "value": "1920x1080",
+      "confirmed_in": [
+        "podsbar-launch"
+      ],
+      "updated_at": "2026-10-15T15:24:57.362Z"
+    },
+    "language": {
+      "value": "en",
+      "confirmed_in": [
+        "podsbar-launch"
+      ],
+      "updated_at": "2026-10-15T15:24:57.423Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "podsbar-launch"
+      ],
+      "updated_at": "2026-10-15T15:24:57.485Z"
+    },
+    "storyboard": {
+      "value": "no",
+      "confirmed_in": [
+        "podsbar-launch"
+      ],
+      "updated_at": "2026-10-15T15:24:57.549Z"
+    }
+  },
+  "sightings": {}
+}

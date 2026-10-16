@@ -1,0 +1,166 @@
+<template>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 500; src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Inter"; font-weight: 600; src: url("assets/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #F5F5F7; }
+    .g03-bg { position: absolute; inset: 0; background: #0B0C0F; }
+    .g03-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 36px 36px;
+      -webkit-mask-image: radial-gradient(ellipse at 60% 30%, #000 10%, transparent 65%); mask-image: radial-gradient(ellipse at 60% 30%, #000 10%, transparent 65%); }
+    .g03-glow { position: absolute; left: 700px; top: -300px; width: 1000px; height: 1000px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,216,122,0.28), transparent 62%); }
+    .g03-glow2 { position: absolute; left: -300px; top: 500px; width: 900px; height: 900px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,216,122,0.10), transparent 62%); }
+
+    .g03-scene { position: absolute; inset: 0; perspective: 1800px; perspective-origin: 50% 0%; }
+    .g03-camera { position: absolute; inset: 0; transform-origin: 62% 18%; }
+
+    /* macOS menu bar at 5x — measurements follow MenuBarIcon.swift Metrics. */
+    .g03-bar { position: absolute; left: 160px; top: 140px; width: 1600px; height: 120px; border-radius: 28px;
+      display: flex; align-items: center; justify-content: space-between; padding: 0 44px 0 52px;
+      background: linear-gradient(180deg, rgba(48,49,56,0.92), rgba(30,31,36,0.92));
+      border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 40px 120px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08);
+      transform-origin: 50% 0%; }
+    .g03-menus { display: flex; gap: 44px; font-size: 44px; font-weight: 500; letter-spacing: -0.01em; color: rgba(245,245,247,0.55); }
+    .g03-menus b { font-weight: 800; color: rgba(245,245,247,0.8); }
+    .g03-status { display: flex; align-items: center; gap: 40px; font-size: 44px; font-weight: 500; color: rgba(245,245,247,0.85); }
+    .g03-status svg { width: 52px; height: 52px; }
+
+    .g03-item { position: relative; height: 96px; padding: 0 22px; display: flex; align-items: center; border-radius: 20px; }
+    .g03-hilite { position: absolute; inset: 0; border-radius: 20px; background: rgba(255,255,255,0.14); }
+    .g03-glyph { position: relative; display: flex; align-items: center; height: 90px; color: #FFFFFF; }
+    .g03-num { font-size: 52px; font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; display: inline-block; width: 62px; text-align: right; }
+    .g03-num.g03-r { text-align: left; }
+    .g03-let { font-size: 40px; font-weight: 600; opacity: 0.55; }
+    .g03-pods { display: flex; gap: 12.5px; margin: 0 17.5px; }
+    .g03-pod { position: relative; width: 35px; height: 65px; border: 5px solid #FFFFFF; border-radius: 18px; }
+    .g03-pod-in { position: absolute; inset: 3px; border-radius: 10px; overflow: hidden; }
+    .g03-fill { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; background: #FFFFFF; transform-origin: 50% 100%; }
+
+    /* Popover at 2.4x — PopoverView.swift is 244pt wide with 12pt padding. */
+    .g03-pop { position: absolute; top: 118px; left: 50%; margin-left: -293px; width: 586px; padding: 29px; border-radius: 30px;
+      background: linear-gradient(180deg, rgba(44,45,52,0.97), rgba(32,33,38,0.97));
+      border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 50px 120px rgba(0,0,0,0.65); transform-origin: 50% 0%;
+      font-size: 26px; font-weight: 500; color: rgba(245,245,247,0.9); }
+    .g03-title { font-size: 31px; font-weight: 600; color: #F5F5F7; margin-bottom: 18px; }
+    .g03-row { display: flex; align-items: center; height: 46px; }
+    .g03-lbl { width: 96px; color: rgba(245,245,247,0.6); }
+    .g03-track { position: relative; flex: 1; height: 14px; border-radius: 7px; background: rgba(255,255,255,0.12); overflow: hidden; }
+    .g03-bfill { position: absolute; inset: 0; border-radius: 7px; background: rgba(235,235,245,0.85); transform-origin: 0 50%; }
+    .g03-val { width: 90px; text-align: right; font-variant-numeric: tabular-nums; color: #F5F5F7; }
+    .g03-div { height: 1px; background: rgba(255,255,255,0.10); margin: 19px 0; }
+    .g03-muted { color: rgba(245,245,247,0.55); }
+    .g03-line { display: flex; align-items: center; justify-content: space-between; height: 50px; }
+    .g03-select { display: flex; align-items: center; gap: 14px; padding: 6px 18px; border-radius: 12px; background: rgba(255,255,255,0.12); }
+    .g03-check { display: inline-block; width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); margin-right: 16px; vertical-align: middle; }
+
+    .g03-copy { position: absolute; left: 170px; top: 430px; width: 700px; }
+    .g03-head { font-size: 132px; font-weight: 800; letter-spacing: -0.055em; line-height: 1; }
+    .g03-head span { display: inline-block; }
+    .g03-green { color: #5BD87A; text-shadow: 0 0 60px rgba(91,216,122,0.45); }
+    .g03-body { margin-top: 30px; font-size: 38px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.35; color: #8E8E93; }
+  </style>
+
+  <div id="root" data-composition-id="03-glance" data-width="1920" data-height="1080">
+    <div id="g03-bg" class="g03-bg clip" data-start="0" data-duration="5.4" data-track-index="0">
+      <div class="g03-grid"></div>
+      <div class="g03-glow" id="g03-glow"></div>
+      <div class="g03-glow2"></div>
+    </div>
+
+    <div id="g03-scene" class="g03-scene clip" data-start="0" data-duration="5.4" data-track-index="1">
+      <div class="g03-camera" id="g03-camera">
+        <div class="g03-copy">
+          <div class="g03-head" id="g03-head"><span>One</span> <span class="g03-green">glance.</span></div>
+          <div class="g03-body" id="g03-body">Both buds. Always in view.</div>
+        </div>
+
+        <div class="g03-bar" id="g03-bar">
+          <div class="g03-menus"><b>Finder</b><span>File</span><span>Edit</span><span>View</span><span>Go</span></div>
+          <div class="g03-status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgba(245,245,247,0.85)" stroke-width="2.2" stroke-linecap="round">
+              <path d="M2.5 9a14 14 0 0 1 19 0"/><path d="M5.8 12.6a9 9 0 0 1 12.4 0"/><path d="M9.1 16.1a4.2 4.2 0 0 1 5.8 0"/><circle cx="12" cy="19.3" r="1.1" fill="rgba(245,245,247,0.85)" stroke="none"/>
+            </svg>
+            <div class="g03-item" id="g03-item">
+              <div class="g03-hilite" id="g03-hilite"></div>
+              <div class="g03-glyph">
+                <span class="g03-num" id="g03-nl">88</span><span class="g03-let">L</span>
+                <div class="g03-pods">
+                  <div class="g03-pod"><div class="g03-pod-in"><div class="g03-fill" id="g03-fl"></div></div></div>
+                  <div class="g03-pod"><div class="g03-pod-in"><div class="g03-fill" id="g03-fr"></div></div></div>
+                </div>
+                <span class="g03-let">R</span><span class="g03-num g03-r" id="g03-nr">84</span>
+              </div>
+              <div class="g03-pop" id="g03-pop">
+                <div class="g03-title">AirPods Pro</div>
+                <div class="g03-row"><span class="g03-lbl">Left</span><div class="g03-track"><div class="g03-bfill" id="g03-b1"></div></div><span class="g03-val">88%</span></div>
+                <div class="g03-row"><span class="g03-lbl">Right</span><div class="g03-track"><div class="g03-bfill" id="g03-b2"></div></div><span class="g03-val">84%</span></div>
+                <div class="g03-row"><span class="g03-lbl">Case</span><div class="g03-track"><div class="g03-bfill" id="g03-b3"></div></div><span class="g03-val">100%</span></div>
+                <div class="g03-div"></div>
+                <div class="g03-line g03-muted"><span>Updated just now</span>
+                  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="rgba(245,245,247,0.55)" stroke-width="2" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4.5h-4.5"/></svg>
+                </div>
+                <div class="g03-line"><span>Menu bar</span><span class="g03-select">Both buds <span class="g03-muted">⌃⌄</span></span></div>
+                <div class="g03-line" style="justify-content:flex-start"><span class="g03-check"></span><span>Launch at login</span></div>
+                <div class="g03-div"></div>
+                <div class="g03-line g03-muted"><span>Quit PodsBar</span></div>
+              </div>
+            </div>
+            <span>Fri Sep 4&nbsp;&nbsp;9:41</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // This frame starts on a bar line and lasts three bars: a beat every 0.45s, a bar every 1.8s.
+      const B = (n) => n * 0.45;
+      const tl = gsap.timeline({ paused: true });
+      const nl = document.getElementById("g03-nl");
+      const nr = document.getElementById("g03-nr");
+
+      tl.fromTo("#g03-glow", { opacity: 0.4, scale: 0.85 }, { opacity: 1, scale: 1.1, duration: 5.4, ease: "sine.inOut" }, 0);
+
+      // Bar 1 — the menu bar swings down in 3D; the camera starts close on the glyph and settles by bar 2.
+      tl.fromTo("#g03-bar", { y: -260, rotationX: 62, opacity: 0 },
+        { y: 0, rotationX: 0, opacity: 1, duration: 1.0, ease: "expo.out" }, 0);
+      tl.fromTo("#g03-camera", { scale: 1.55, x: -260, y: 60 },
+        { scale: 1, x: 0, y: 0, duration: B(4) - 0.1, ease: "power3.inOut" }, 0.1);
+
+      // Capsules fill from empty while the numbers count up — the app's own glyph, alive.
+      tl.fromTo("#g03-fl", { scaleY: 0 }, { scaleY: 0.88, duration: 1.2, ease: "power3.out" }, B(1));
+      tl.fromTo("#g03-fr", { scaleY: 0 }, { scaleY: 0.84, duration: 1.2, ease: "power3.out" }, B(1));
+      const count = { l: 0, r: 0 };
+      tl.fromTo(count, { l: 0, r: 0 }, {
+        l: 88, r: 84, duration: 1.2, ease: "power3.out",
+        onUpdate() { nl.textContent = Math.round(count.l); nr.textContent = Math.round(count.r); }
+      }, B(1));
+
+      // Bar 2 — headline, one word per beat, then the line under it.
+      gsap.utils.toArray("#g03-head span").forEach((w, i) => {
+        tl.fromTo(w, { y: 60, opacity: 0, filter: "blur(12px)" },
+          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, B(4 + i));
+      });
+      tl.fromTo("#g03-body", { y: 30, opacity: 0, filter: "blur(8px)" },
+        { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, B(6));
+
+      // Bar 3 — click: item highlights, the popover drops, bars fill on the following beats.
+      tl.fromTo("#g03-hilite", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power2.out" }, B(8));
+      tl.fromTo("#g03-item", { scale: 1 }, { scale: 0.96, duration: 0.08, ease: "power2.out" }, B(8));
+      tl.fromTo("#g03-item", { scale: 0.96 }, { scale: 1, duration: 0.2, ease: "power2.out", immediateRender: false }, B(8) + 0.08);
+      tl.fromTo("#g03-pop", { y: -24, scaleY: 0.9, opacity: 0, filter: "blur(8px)" },
+        { y: 0, scaleY: 1, opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, B(8) + 0.05);
+      ["#g03-b1", "#g03-b2", "#g03-b3"].forEach((id, i) => {
+        tl.fromTo(id, { scaleX: 0 }, { scaleX: [0.88, 0.84, 1][i], duration: 0.8, ease: "power3.out" }, B(9) + i * 0.225);
+      });
+
+      // Slow drift to the end so the hero never freezes.
+      tl.to("#g03-camera", { scale: 1.03, y: -6, duration: 5.4 - B(4), ease: "sine.inOut" }, B(4));
+
+      window.__timelines["03-glance"] = tl;
+    })();
+  </script>
+</template>

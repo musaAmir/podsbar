@@ -1,0 +1,87 @@
+<template>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 500; src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Inter"; font-weight: 600; src: url("assets/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #F5F5F7; }
+    .c04-bg { position: absolute; inset: 0; background: #0B0C0F; }
+    .c04-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 36px 36px;
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 15%, transparent 60%); mask-image: radial-gradient(ellipse at center, #000 15%, transparent 60%); }
+    .c04-glow { position: absolute; left: 360px; top: 40px; width: 900px; height: 900px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,216,122,0.30), transparent 62%); }
+    .c04-stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 150px; }
+    .c04-row { display: flex; align-items: center; gap: 50px; }
+    .c04-iconwrap { position: relative; width: 300px; height: 300px; flex: none; }
+    .c04-icon { position: absolute; inset: 0; width: 300px; height: 300px; filter: drop-shadow(0 40px 60px rgba(0,0,0,0.6)); }
+    .c04-ring { position: absolute; inset: 20px; border-radius: 70px; border: 4px solid #5BD87A; }
+    .c04-text { width: 760px; overflow: hidden; }
+    .c04-word { font-size: 170px; font-weight: 800; letter-spacing: -0.06em; line-height: 1.05; }
+    .c04-tag { margin-top: 6px; font-size: 42px; font-weight: 500; letter-spacing: -0.02em; color: #8E8E93; }
+    .c04-chips { margin-top: 70px; display: flex; gap: 22px; }
+    .c04-chip { display: flex; align-items: center; gap: 14px; padding: 16px 30px; border-radius: 999px; font-size: 28px; font-weight: 600;
+      background: rgba(30,31,36,0.85); border: 1px solid rgba(255,255,255,0.10); }
+    .c04-dot { width: 12px; height: 12px; border-radius: 50%; background: #5BD87A; box-shadow: 0 0 14px rgba(91,216,122,0.8); }
+  </style>
+
+  <div id="root" data-composition-id="04-cta" data-width="1920" data-height="1080">
+    <div id="c04-bg" class="c04-bg clip" data-start="0" data-duration="4.072" data-track-index="0">
+      <div class="c04-grid"></div>
+      <div class="c04-glow" id="c04-glow"></div>
+    </div>
+    <div id="c04-stage" class="c04-stage clip" data-start="0" data-duration="4.072" data-track-index="1">
+      <div class="c04-row">
+        <div class="c04-iconwrap" id="c04-iconwrap">
+          <div class="c04-ring" id="c04-ring"></div>
+          <img class="c04-icon" id="c04-icon" src="assets/app-icon.png" alt="" />
+        </div>
+        <div class="c04-text">
+          <div class="c04-word" id="c04-word">PodsBar</div>
+          <div class="c04-tag" id="c04-tag">AirPods battery in your menu bar.</div>
+        </div>
+      </div>
+      <div class="c04-chips">
+        <div class="c04-chip"><span class="c04-dot"></span>macOS 14+</div>
+        <div class="c04-chip"><span class="c04-dot"></span>Free &amp; open source</div>
+        <div class="c04-chip"><span class="c04-dot"></span>No tracking</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // This frame starts on a bar line: a beat every 0.45s. The jingle's last note hits at 2.70s.
+      const B = (n) => n * 0.45;
+      const FINAL_HIT = 2.70;
+      const tl = gsap.timeline({ paused: true });
+      // The icon starts centred: shift it right by half of (text width + gap).
+      const centerShift = (760 + 50) / 2;
+
+      tl.fromTo("#c04-glow", { opacity: 0.3, scale: 0.8 }, { opacity: 0.8, scale: 1.05, duration: FINAL_HIT, ease: "sine.out" }, 0);
+
+      // Beat 1 — icon pops with a ring pulse.
+      tl.fromTo("#c04-iconwrap", { x: centerShift, scale: 0.55, opacity: 0, rotation: -8 },
+        { scale: 1, opacity: 1, rotation: 0, duration: 0.6, ease: "back.out(1.8)" }, 0);
+      tl.fromTo("#c04-ring", { scale: 0.9, opacity: 0.9 }, { scale: 1.7, opacity: 0, duration: 0.8, ease: "power2.out" }, 0.05);
+
+      // Beat 3 — icon slides left as the wordmark wipes out from behind it; tagline on beat 4.
+      tl.fromTo("#c04-iconwrap", { x: centerShift }, { x: 0, duration: 0.6, ease: "expo.inOut", immediateRender: false }, B(2) - 0.3);
+      tl.fromTo("#c04-word", { xPercent: -105 }, { xPercent: 0, duration: 0.7, ease: "expo.out" }, B(2));
+      tl.fromTo("#c04-tag", { y: 24, opacity: 0, filter: "blur(8px)" },
+        { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, B(3));
+
+      // Bar 2 — chips on eighth notes.
+      tl.fromTo(".c04-chip", { y: 30, opacity: 0, scale: 0.9 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.45, stagger: 0.225, ease: "back.out(2)" }, B(4));
+
+      // Final note — glow flares and the icon gives one last pulse, then everything settles.
+      tl.fromTo("#c04-glow", { opacity: 0.8, scale: 1.05 }, { opacity: 1, scale: 1.25, duration: 0.25, ease: "power2.out", immediateRender: false }, FINAL_HIT);
+      tl.fromTo("#c04-glow", { opacity: 1, scale: 1.25 }, { opacity: 0.75, scale: 1.12, duration: 1.1, ease: "sine.out", immediateRender: false }, FINAL_HIT + 0.25);
+      tl.fromTo("#c04-ring", { scale: 0.95, opacity: 0.8 }, { scale: 1.6, opacity: 0, duration: 0.8, ease: "power2.out", immediateRender: false }, FINAL_HIT);
+      tl.fromTo("#c04-icon", { scale: 1 }, { scale: 1.06, duration: 0.1, ease: "power2.out" }, FINAL_HIT);
+      tl.fromTo("#c04-icon", { scale: 1.06 }, { scale: 1, duration: 0.4, ease: "power3.out", immediateRender: false }, FINAL_HIT + 0.1);
+
+      window.__timelines["04-cta"] = tl;
+    })();
+  </script>
+</template>

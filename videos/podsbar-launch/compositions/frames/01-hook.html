@@ -1,0 +1,66 @@
+<template>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: "Inter"; font-weight: 700; src: url("assets/fonts/inter-latin-700-normal.woff2") format("woff2"); }
+    @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #F5F5F7; }
+    .h01-bg { position: absolute; inset: 0; background: #0B0C0F; }
+    .h01-grid { position: absolute; inset: -40px; background: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px) 0 0 / 36px 36px;
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%); mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%); }
+    .h01-glow { position: absolute; left: 560px; top: 140px; width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,216,122,0.30), transparent 65%); }
+    .h01-stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 120px; }
+    .h01-line { display: flex; justify-content: center; gap: 26px; font-size: 96px; font-weight: 700; letter-spacing: -0.045em; line-height: 1.1; }
+    .h01-word { display: inline-block; }
+    .h01-muted { color: #8E8E93; }
+    .h01-num { margin-top: 10px; font-size: 330px; font-weight: 800; letter-spacing: -0.06em; line-height: 1; font-variant-numeric: tabular-nums;
+      background: linear-gradient(180deg, #FFFFFF 0%, #5BD87A 120%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  </style>
+
+  <div id="root" data-composition-id="01-hook" data-width="1920" data-height="1080">
+    <div id="h01-bg" class="h01-bg clip" data-start="0" data-duration="3.728" data-track-index="0">
+      <div class="h01-grid"></div>
+      <div class="h01-glow" id="h01-glow"></div>
+    </div>
+    <div id="h01-stage" class="h01-stage clip" data-start="0" data-duration="3.728" data-track-index="1">
+      <div class="h01-line" id="h01-line">
+        <span class="h01-word">Your</span><span class="h01-word">AirPods</span><span class="h01-word h01-muted">are at</span>
+      </div>
+      <div class="h01-num" id="h01-num">??%</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // Music beats (133 BPM): first beat 0.128s, one beat = 0.45s, bar 2 lands at 1.928s.
+      const B = (n) => 0.128 + n * 0.45;
+      const tl = gsap.timeline({ paused: true });
+      const num = document.getElementById("h01-num");
+
+      tl.fromTo("#h01-glow", { scale: 0.8, opacity: 0.5 }, { scale: 1.15, opacity: 1, duration: 3.728, ease: "sine.inOut" }, 0);
+      tl.fromTo("#h01-line", { scale: 1 }, { scale: 1.04, duration: 3.728, ease: "none" }, 0);
+
+      // One word per beat.
+      gsap.utils.toArray(".h01-word").forEach((w, i) => {
+        tl.fromTo(w, { y: 60, opacity: 0, filter: "blur(12px)" },
+          { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, B(i));
+      });
+
+      // The counter slams in on bar 2 and scrambles until it lands on "??%" on beat 7.
+      tl.fromTo(num, { scale: 1.4, opacity: 0, filter: "blur(20px)" },
+        { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, B(4));
+      const proxy = { v: 0 };
+      const digit = (i, k) => (Math.floor(Math.abs(Math.sin(i * 12.9898 + k * 78.233) * 43758.5453)) % 10);
+      tl.fromTo(proxy, { v: 0 }, {
+        v: 18, duration: B(7) - B(4), ease: "none",
+        onUpdate() {
+          const i = Math.floor(proxy.v);
+          num.textContent = i >= 18 ? "??%" : `${digit(i, 1)}${digit(i, 2)}%`;
+        }
+      }, B(4));
+      tl.fromTo(num, { scale: 1.08 }, { scale: 1, duration: 0.35, ease: "power3.out", immediateRender: false }, B(7));
+
+      window.__timelines["01-hook"] = tl;
+    })();
+  </script>
+</template>
