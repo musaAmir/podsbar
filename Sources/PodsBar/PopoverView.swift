@@ -1,15 +1,14 @@
+import Combine
 import ServiceManagement
 import SwiftUI
 
 struct PopoverView: View {
     @ObservedObject var monitor: BatteryMonitor
+    @ObservedObject var updates: UpdateController
     @AppStorage("displayMode") private var displayModeRaw = DisplayMode.podsAndBoth.rawValue
 
-    @State private var launchAtLogin = SMAppService.mainApp.status == .enabled
+    @State private var launchStatus = SMAppService.mainApp.status
     @State private var launchError: String?
-    @State private var now = Date()
-
-    private let ticker = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -24,8 +23,13 @@ struct PopoverView: View {
         }
         .padding(12)
         .frame(width: 244)
-        .onReceive(ticker) { now = $0 }
-        .onAppear { monitor.refresh() }
+        .onAppear {
+            launchStatus = SMAppService.mainApp.status
+            monitor.refreshIfNeeded()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
+            launchStatus = SMAppService.mainApp.status
+        }
     }
 
     // MARK: - Readings
@@ -44,14 +48,16 @@ struct PopoverView: View {
                     BatteryRow(label: "Left", level: device.left)
                     BatteryRow(label: "Right", level: device.right)
                 }
-                BatteryRow(label: "Case", level: device.caseLevel)
+                if !device.isSingleCell {
+                    BatteryRow(label: "Case", level: device.caseLevel)
+                }
             }
         }
     }
 
     private var empty: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text("No AirPods connected")
+            Text(monitor.lastError == nil ? "No AirPods connected" : "Couldn't read battery levels")
                 .font(.system(size: 13, weight: .semibold))
             Text(monitor.lastError ?? "Connect your AirPods to see battery levels.")
                 .font(.system(size: 11))
@@ -65,6 +71,24 @@ struct PopoverView: View {
 
     private var controls: some View {
         VStack(alignment: .leading, spacing: 8) {
+            if monitor.devices.count > 1 || monitor.pinnedAddress != nil {
+                Picker("Device", selection: Binding(
+                    get: { monitor.pinnedAddress ?? "" },
+                    set: { monitor.pinnedAddress = $0.isEmpty ? nil : $0 }
+                )) {
+                    Text("Automatic").tag("")
+                    if let pinned = monitor.pinnedAddress,
+                       !monitor.devices.contains(where: { $0.address == pinned }) {
+                        Text("Preferred device (disconnected)").tag(pinned)
+                    }
+                    ForEach(monitor.devices) { device in
+                        Text(device.name).tag(device.address)
+                    }
+                }
+                .pickerStyle(.menu)
+                .controlSize(.small)
+            }
+
             HStack {
                 Text(freshness)
                     .font(.system(size: 11))
@@ -78,6 +102,13 @@ struct PopoverView: View {
                 .help("Refresh now")
             }
 
+            if let error = monitor.lastError, monitor.primary != nil {
+                Text("Showing last known levels. \(error)")
+                    .font(.system(size: 11))
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
             Picker("Menu bar", selection: $displayModeRaw) {
                 ForEach(DisplayMode.allCases) { mode in
                     Text(mode.label).tag(mode.rawValue)
@@ -86,10 +117,20 @@ struct PopoverView: View {
             .pickerStyle(.menu)
             .controlSize(.small)
 
-            Toggle("Launch at login", isOn: $launchAtLogin)
+            Toggle("Launch at login", isOn: Binding(
+                get: { launchStatus == .enabled || launchStatus == .requiresApproval },
+                set: setLaunchAtLogin
+            ))
                 .toggleStyle(.checkbox)
                 .controlSize(.small)
-                .onChange(of: launchAtLogin) { _, enabled in setLaunchAtLogin(enabled) }
+
+            if launchStatus == .requiresApproval {
+                Button("Allow in System Settings…") {
+                    SMAppService.openSystemSettingsLoginItems()
+                }
+                .buttonStyle(.borderless)
+                .font(.system(size: 11))
+            }
 
             if let launchError {
                 Text(launchError)
@@ -100,6 +141,25 @@ struct PopoverView: View {
 
             Divider()
 
+            Button("Check for Updates…", action: updates.checkForUpdates)
+                .buttonStyle(.borderless)
+                .disabled(!updates.canCheckForUpdates)
+
+            Toggle("Check for updates automatically", isOn: Binding(
+                get: { updates.automaticallyChecksForUpdates },
+                set: updates.setAutomaticallyChecksForUpdates
+            ))
+            .toggleStyle(.checkbox)
+            .controlSize(.small)
+            .disabled(updates.startupError != nil)
+
+            if let error = updates.startupError {
+                Text(error)
+                    .font(.system(size: 10))
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
             Button("Quit PodsBar") { NSApp.terminate(nil) }
                 .buttonStyle(.borderless)
                 .keyboardShortcut("q")
@@ -107,11 +167,9 @@ struct PopoverView: View {
     }
 
     private var freshness: String {
+        if monitor.isRefreshing { return "Refreshing…" }
         guard let updated = monitor.lastUpdated else { return "Never updated" }
-        let seconds = Int(now.timeIntervalSince(updated))
-        if seconds < 10 { return "Updated just now" }
-        if seconds < 60 { return "Updated \(seconds)s ago" }
-        return "Updated \(seconds / 60)m ago"
+        return "Updated at \(updated.formatted(date: .omitted, time: .shortened))"
     }
 
     private func setLaunchAtLogin(_ enabled: Bool) {
@@ -123,10 +181,9 @@ struct PopoverView: View {
             }
             launchError = nil
         } catch {
-            // Unsigned local builds can't register; surface it instead of silently reverting.
-            launchAtLogin = SMAppService.mainApp.status == .enabled
             launchError = "Couldn't change this: \(error.localizedDescription)"
         }
+        launchStatus = SMAppService.mainApp.status
     }
 }
 

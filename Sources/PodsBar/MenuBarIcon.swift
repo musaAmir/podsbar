@@ -27,9 +27,22 @@ enum DisplayMode: String, CaseIterable, Identifiable {
 /// rather than pasted on. It also means the glyph is drawn once and never needs re-rendering
 /// when the appearance changes. The cost is that it can't be red at low battery; a near-empty
 /// capsule reads clearly enough, and the popover shows red there.
+@MainActor
 enum MenuBarIcon {
 
     static let lowThreshold = 20
+
+    private struct CacheKey: Equatable {
+        let left: Int?
+        let right: Int?
+        let single: Int?
+        let mode: DisplayMode
+        let dimmed: Bool
+    }
+
+    // Retain just the current glyph, not an image for every battery combination.
+    // Refresh/freshness changes otherwise redraw an identical AppKit image.
+    private static var cached: (key: CacheKey, image: NSImage)?
 
     private enum Metrics {
         static let height: CGFloat = 18
@@ -60,6 +73,8 @@ enum MenuBarIcon {
     private static func render(
         left: Int?, right: Int?, single: Int?, mode: DisplayMode, dimmed: Bool
     ) -> NSImage {
+        let key = CacheKey(left: left, right: right, single: single, mode: mode, dimmed: dimmed)
+        if let cached, cached.key == key { return cached.image }
         // A single-cell device (AirPods Max, most Beats) gets one pod instead of two.
         let isSingle = single != nil && left == nil && right == nil
         let levels: [Int?] = isSingle ? [single] : [left, right]
@@ -93,6 +108,7 @@ enum MenuBarIcon {
         }
 
         image.isTemplate = true
+        cached = (key, image)
         return image
     }
 
@@ -150,14 +166,7 @@ enum MenuBarIcon {
     }
 
     private static var numberFont: NSFont {
-        let base = NSFont.systemFont(ofSize: Metrics.numberSize, weight: .medium)
-        let descriptor = base.fontDescriptor.addingAttributes([
-            .featureSettings: [[
-                NSFontDescriptor.FeatureKey.typeIdentifier: kNumberSpacingType,
-                NSFontDescriptor.FeatureKey.selectorIdentifier: kMonospacedNumbersSelector,
-            ]]
-        ])
-        return NSFont(descriptor: descriptor, size: Metrics.numberSize) ?? base
+        NSFont.monospacedDigitSystemFont(ofSize: Metrics.numberSize, weight: .medium)
     }
 
     // MARK: - Drawing

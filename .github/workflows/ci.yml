@@ -1,0 +1,20 @@
+name: Build and test
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test
+        run: swift test -Xswiftc -warnings-as-errors
+      - name: Test release metadata
+        run: python3 -m unittest discover -s Tests/ReleaseScripts
+      - name: Build Apple silicon and Intel app
+        run: ./build.sh release universal
+      - name: Verify Sparkle signing with a disposable test key
+        run: ./Tests/ReleaseScripts/smoke-sparkle.sh

@@ -2,143 +2,203 @@ import AppKit
 import Combine
 import CoreAudio
 
-/// Owns the polling loop and publishes the current readings.
-///
-/// Polling is deliberately lazy: a timer with a generous tolerance (so the CPU can coalesce
-/// our wake-up with other work instead of waking the core on its own), plus event-driven
-/// refreshes for the cases you'd actually notice — putting the buds in, waking the Mac, and
-/// opening the menu.
-///
-/// Connect detection listens to CoreAudio's device list rather than IOBluetooth: AirPods show
-/// up as an audio device the moment they connect, and unlike the Bluetooth APIs it costs no
-/// privacy prompt. Nothing in this app triggers TCC at all.
+/// One scan at a time, infrequent polling, and coalesced connection/wake refreshes.
 @MainActor
 final class BatteryMonitor: ObservableObject {
-
     @Published private(set) var devices: [PodsDevice] = []
     @Published private(set) var lastUpdated: Date?
     @Published private(set) var lastError: String?
     @Published private(set) var isRefreshing = false
+    @Published var pinnedAddress: String? {
+        didSet { defaults.set(pinnedAddress, forKey: "pinnedAddress") }
+    }
 
-    /// The device the menu bar represents. First connected one, or the pinned address if set.
     var primary: PodsDevice? {
-        if let pinned = pinnedAddress, let match = devices.first(where: { $0.address == pinned }) {
+        if let pinned = pinnedAddress,
+           let match = devices.first(where: { $0.address == pinned }) {
             return match
         }
-        return devices.first
+        // Prefer a wearable with bud readings over a case-only Bluetooth record.
+        return devices.first(where: { $0.left != nil || $0.right != nil || $0.single != nil }) ?? devices.first
     }
 
-    var pinnedAddress: String? {
-        didSet { UserDefaults.standard.set(pinnedAddress, forKey: "pinnedAddress") }
-    }
-
-    /// Seconds between polls. Slower when nothing is connected — there is nothing to change.
+    private let defaults: UserDefaults
+    private let read: () async throws -> [PodsDevice]
+    private let connectionDelay: Duration
     private var pollInterval: TimeInterval { devices.isEmpty ? 120 : 60 }
-
     private var timer: Timer?
     private var refreshTask: Task<Void, Never>?
+    private var connectionTask: Task<Void, Never>?
+    private var observers: [NSObjectProtocol] = []
     private var audioListener: AudioObjectPropertyListenerBlock?
+    private var started = false
+    private var sleeping = false
+    private var refreshGeneration = 0
+    private var needsRefresh = false
 
-    init() {
-        pinnedAddress = UserDefaults.standard.string(forKey: "pinnedAddress")
+    init(defaults: UserDefaults = .standard,
+         read: @escaping () async throws -> [PodsDevice] = BatteryReader.read,
+         connectionDelay: Duration = .seconds(4)) {
+        self.defaults = defaults
+        self.read = read
+        self.connectionDelay = connectionDelay
+        pinnedAddress = defaults.string(forKey: "pinnedAddress").map(BatteryReader.normalizeAddress)
     }
 
     func start() {
+        guard !started else { return }
+        started = true
+        sleeping = false
         observeSystemEvents()
         refresh()
-        scheduleTimer()
     }
 
-    // MARK: - Refreshing
+    /// Explicit shutdown also removes observers; repeated view appearances cannot add more.
+    func stop() {
+        started = false
+        suspend()
+        for observer in observers { NSWorkspace.shared.notificationCenter.removeObserver(observer) }
+        observers.removeAll()
+        if let audioListener {
+            var address = Self.audioDevicesAddress
+            AudioObjectRemovePropertyListenerBlock(
+                AudioObjectID(kAudioObjectSystemObject), &address, DispatchQueue.main, audioListener
+            )
+            self.audioListener = nil
+        }
+    }
+
+    /// Opening the popover can reuse a recent scan. The refresh button always forces a scan.
+    func refreshIfNeeded(maxAge: TimeInterval = 15) {
+        if lastError == nil, let lastUpdated, Date().timeIntervalSince(lastUpdated) < maxAge { return }
+        refresh()
+    }
 
     func refresh() {
-        guard refreshTask == nil else { return }
+        guard !sleeping, refreshTask == nil else { return }
+        timer?.invalidate()
+        timer = nil
         isRefreshing = true
+        refreshGeneration += 1
+        let generation = refreshGeneration
+        let read = self.read
 
         refreshTask = Task { [weak self] in
             let result: Result<[PodsDevice], Error>
             do {
-                // `system_profiler` is a subprocess; keep it off the main actor.
-                result = .success(try await Task.detached(priority: .utility) {
-                    try BatteryReader.read()
-                }.value)
+                result = .success(try await read())
             } catch {
                 result = .failure(error)
             }
 
-            guard let self, !Task.isCancelled else { return }
-            self.apply(result)
+            guard let self, !Task.isCancelled, self.refreshGeneration == generation else { return }
+            switch result {
+            case .success(let found):
+                // Avoid publishing an unchanged array on every poll.
+                if self.devices != found { self.devices = found }
+                self.lastError = nil
+                self.lastUpdated = Date()
+            case .failure(let error):
+                self.lastError = error.localizedDescription
+            }
             self.refreshTask = nil
             self.isRefreshing = false
+            if self.needsRefresh {
+                self.needsRefresh = false
+                self.refresh()
+            } else {
+                self.scheduleTimer()
+            }
         }
     }
 
-    private func apply(_ result: Result<[PodsDevice], Error>) {
-        let hadDevices = !devices.isEmpty
-
-        switch result {
-        case .success(let found):
-            devices = found
-            lastError = nil
-            lastUpdated = Date()
-        case .failure(let error):
-            lastError = String(describing: error)
-        }
-
-        // Connected/disconnected changes the poll interval, so re-arm the timer.
-        if hadDevices != !devices.isEmpty { scheduleTimer() }
-    }
-
-    // MARK: - Scheduling
-
+    // A one-shot timer is armed after completion, so a slow scan cannot stack up polls.
     private func scheduleTimer() {
         timer?.invalidate()
-
-        let timer = Timer(timeInterval: pollInterval, repeats: true) { [weak self] _ in
+        guard started, !sleeping else { timer = nil; return }
+        let timer = Timer(timeInterval: pollInterval, repeats: false) { [weak self] _ in
             Task { @MainActor in self?.refresh() }
         }
-        // Lets macOS batch our wake-up with other timers instead of firing a core just for us.
         timer.tolerance = pollInterval * 0.25
         RunLoop.main.add(timer, forMode: .common)
         self.timer = timer
     }
 
-    private func observeSystemEvents() {
-        NSWorkspace.shared.notificationCenter.addObserver(
-            forName: NSWorkspace.didWakeNotification, object: nil, queue: .main
-        ) { [weak self] _ in
-            Task { @MainActor in self?.refresh() }
-        }
-
-        observeAudioDevices()
+    func suspend() {
+        sleeping = true
+        timer?.invalidate()
+        timer = nil
+        connectionTask?.cancel()
+        connectionTask = nil
+        refreshGeneration += 1
+        refreshTask?.cancel()
+        refreshTask = nil
+        needsRefresh = false
+        isRefreshing = false
     }
 
-    /// Fires whenever an audio device appears or disappears — which is exactly when AirPods
-    /// connect or disconnect. No permission required.
-    private func observeAudioDevices() {
-        var address = AudioObjectPropertyAddress(
+    func resume() {
+        sleeping = false
+        refreshAfterConnectionChange()
+    }
+
+    /// The immediate read handles disconnects. One delayed read lets bluetoothd catch up;
+    /// replacing it coalesces bursts of CoreAudio events into a single follow-up.
+    func refreshAfterConnectionChange() {
+        guard !sleeping else { return }
+        refreshIfNeeded(maxAge: 2)
+        connectionTask?.cancel()
+        let delay = connectionDelay
+        connectionTask = Task { [weak self] in
+            do { try await Task.sleep(for: delay) } catch { return }
+            guard let self, !Task.isCancelled else { return }
+            self.connectionTask = nil
+            if self.refreshTask != nil {
+                self.needsRefresh = true
+            } else {
+                self.refresh()
+            }
+        }
+    }
+
+    private func observeSystemEvents() {
+        let center = NSWorkspace.shared.notificationCenter
+        observers.append(center.addObserver(
+            forName: NSWorkspace.willSleepNotification, object: nil, queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor in
+                guard let self, self.started else { return }
+                self.suspend()
+            }
+        })
+        observers.append(center.addObserver(
+            forName: NSWorkspace.didWakeNotification, object: nil, queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor in
+                guard let self, self.started else { return }
+                self.resume()
+            }
+        })
+
+        var address = Self.audioDevicesAddress
+        let listener: AudioObjectPropertyListenerBlock = { [weak self] _, _ in
+            Task { @MainActor in
+                guard let self, self.started else { return }
+                self.refreshAfterConnectionChange()
+            }
+        }
+        let status = AudioObjectAddPropertyListenerBlock(
+            AudioObjectID(kAudioObjectSystemObject), &address, DispatchQueue.main, listener
+        )
+        if status == noErr { audioListener = listener }
+        // If registration fails, the normal polling timer still updates the readings.
+    }
+
+    private static var audioDevicesAddress: AudioObjectPropertyAddress {
+        AudioObjectPropertyAddress(
             mSelector: kAudioHardwarePropertyDevices,
             mScope: kAudioObjectPropertyScopeGlobal,
             mElement: kAudioObjectPropertyElementMain
         )
-
-        let listener: AudioObjectPropertyListenerBlock = { [weak self] _, _ in
-            Task { @MainActor in self?.refreshAfterConnectionChange() }
-        }
-
-        AudioObjectAddPropertyListenerBlock(
-            AudioObjectID(kAudioObjectSystemObject), &address, DispatchQueue.main, listener
-        )
-        audioListener = listener
-    }
-
-    /// bluetoothd doesn't know the battery levels the instant the buds connect, so read twice:
-    /// once for the disconnect case (immediate) and once after it has caught up.
-    private func refreshAfterConnectionChange() {
-        refresh()
-        Task { [weak self] in
-            try? await Task.sleep(for: .seconds(4))
-            self?.refresh()
-        }
     }
 }
