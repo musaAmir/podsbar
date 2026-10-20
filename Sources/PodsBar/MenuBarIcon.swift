@@ -10,8 +10,8 @@ enum DisplayMode: String, CaseIterable, Identifiable {
     var label: String {
         switch self {
         case .podsAndBoth:   return "Both buds"
-        case .podsAndLowest: return "Lowest bud only"
-        case .podsOnly:      return "No numbers"
+        case .podsAndLowest: return "Lowest bud"
+        case .podsOnly:      return "Icon only"
         }
     }
 }
