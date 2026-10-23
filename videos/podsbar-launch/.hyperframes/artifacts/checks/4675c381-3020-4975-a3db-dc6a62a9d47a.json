@@ -1,0 +1,287 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 5
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": []
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "duration": 15,
+    "samples": [
+      0.833,
+      2.5,
+      4.167,
+      5.833,
+      7.5,
+      9.167,
+      10.833,
+      12.5,
+      14.167
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 0,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": true,
+    "samples": [
+      0.833,
+      4.167,
+      7.5,
+      10.833,
+      14.167
+    ],
+    "checked": 50,
+    "passed": 50
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 4,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "first_frame_empty",
+        "severity": "warning",
+        "message": "Frame 0 shows only the background, and the first frame is the thumbnail on social players: have the title or key image already on screen at 0 s instead of entering from nothing; see references/review.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 15 text elements stay under it for 0.5 s or more, the smallest \"Connected · Updated 9:41\" at 19 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "Connected · Updated 9:41",
+        "selector": "div.g03-pstatus.g03-muted",
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/03-glance.html",
+        "bbox": {
+          "x": 1001.72,
+          "y": 312.67,
+          "width": 245.44,
+          "height": 22.73
+        },
+        "time": 9.25,
+        "times": [
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25,
+          9.25
+        ],
+        "fontPx": 19.36,
+        "floorPx": 28,
+        "seconds": 1.75,
+        "elements": [
+          {
+            "selector": "div.g03-pstatus.g03-muted",
+            "text": "Connected · Updated 9:41",
+            "fontPx": 19.36,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-tiles > div:nth-of-type(1) > div:nth-of-type(3)",
+            "text": "Left",
+            "fontPx": 19.36,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-tiles > div:nth-of-type(2) > div:nth-of-type(3)",
+            "text": "Right",
+            "fontPx": 19.36,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-tiles > div:nth-of-type(3) > div:nth-of-type(3)",
+            "text": "Case",
+            "fontPx": 19.36,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-slbl.g03-muted",
+            "text": "Show in menu bar",
+            "fontPx": 19.36,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-foot > div:nth-of-type(1) > small:nth-of-type(1)",
+            "text": "v1.2.0",
+            "fontPx": 19.36,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-foot > div:nth-of-type(2) > small:nth-of-type(1)",
+            "text": "⌘Q",
+            "fontPx": 19.36,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "span.g03-on",
+            "text": "Both buds",
+            "fontPx": 20.33,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-seg > span:nth-of-type(2)",
+            "text": "Lowest bud",
+            "fontPx": 20.33,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-seg > span:nth-of-type(3)",
+            "text": "Icon only",
+            "fontPx": 20.33,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-title",
+            "text": "AirPods Pro",
+            "fontPx": 23.23,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-settings > div:nth-of-type(3) > span:nth-of-type(1)",
+            "text": "Launch at login",
+            "fontPx": 23.23,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-settings > div:nth-of-type(4) > span:nth-of-type(1)",
+            "text": "Check for updates automatically",
+            "fontPx": 23.23,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-foot > div:nth-of-type(1) > span:nth-of-type(1)",
+            "text": "Check for Updates…",
+            "fontPx": 23.23,
+            "time": 9.25,
+            "seconds": 1.75
+          },
+          {
+            "selector": "div.g03-foot > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "Quit PodsBar",
+            "fontPx": 23.23,
+            "time": 9.25,
+            "seconds": 1.75
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"Free & open source\" (3 words) is on screen 1.96 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "Free & open source",
+        "selector": "div.c04-chips > div:nth-of-type(2)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/04-cta.html",
+        "bbox": {
+          "x": 841.61,
+          "y": 633.29,
+          "width": 260.07000000000005,
+          "height": 33.97000000000003
+        },
+        "time": 13.039,
+        "words": 3,
+        "seconds": 1.965,
+        "floorSeconds": 2
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "The film's last line \"No tracking\" (2 words) is on screen 1.77 s (±0.01 s), under the 2.00 s a closing line needs: hold it about 0.5 s + 0.3 s a word and at least 2 s before the film ends; see references/motion.md.",
+        "text": "No tracking",
+        "selector": "div.c04-chips > div:nth-of-type(3)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/frames/04-cta.html",
+        "bbox": {
+          "x": 1214.97,
+          "y": 648.39,
+          "width": 148.82999999999993,
+          "height": 32.35000000000002
+        },
+        "time": 13.234,
+        "words": 2,
+        "seconds": 1.77,
+        "floorSeconds": 2
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 120
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

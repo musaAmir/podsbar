@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "ef7f629d-bcef-4bb4-826b-e8fc1b329b5a",
-  "currentRevision": "9648c662-d4ce-45a9-8c9e-c7e6094b6226",
+  "currentRevision": "e047ae56-3279-4f55-8561-b420af5a6c62",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -81,8 +81,8 @@
       "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/be/be151b41238f2376b0c1569463b15b52e9f698a225f4602b60d6e15a4f29051b"
     },
     "compositions/frames/03-glance.html": {
-      "hash": "55b532aa48627bb1ea546eeb9aa78feb8deefa4da19b143f29ce1dbdaf414504",
-      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/55/55b532aa48627bb1ea546eeb9aa78feb8deefa4da19b143f29ce1dbdaf414504"
+      "hash": "d58b5b7cefe86391513eee7ef1a2da592f60d41dbd24882d7a9663750afb4640",
+      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/d5/d58b5b7cefe86391513eee7ef1a2da592f60d41dbd24882d7a9663750afb4640"
     },
     "compositions/frames/04-cta.html": {
       "hash": "8175379812369210c451f0258fd44a83bdd0a3f34edb170cddd2de12254e8783",
@@ -105,8 +105,8 @@
       "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/1b/1be61e58ff4586da89ae63dc47c51b7ddb94e16a94f72389b361b294ca79943c"
     },
     "package.json": {
-      "hash": "446d0fb7ada3cb02a13898a1881c6360de70dbc07b10d2127608b78776f08e7e",
-      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/44/446d0fb7ada3cb02a13898a1881c6360de70dbc07b10d2127608b78776f08e7e"
+      "hash": "14506ff40ea23532b3a396a967063fa97d2433ea85e9aa4ddfcc3893db48df0c",
+      "content": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/14/14506ff40ea23532b3a396a967063fa97d2433ea85e9aa4ddfcc3893db48df0c"
     },
     "assets/music/a-drop.wav": {
       "hash": "68e0bf62c14404e2bbb72c3abe3b33b8f36dd1faf13eef0dbe40b8717c6813c0",
@@ -313,12 +313,31 @@
           "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/55/55b532aa48627bb1ea546eeb9aa78feb8deefa4da19b143f29ce1dbdaf414504"
         }
       }
+    },
+    "e047ae56-3279-4f55-8561-b420af5a6c62": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792792576383,
+      "endedAt": 1792792576385,
+      "files": {
+        "compositions/frames/03-glance.html": {
+          "before": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/55/55b532aa48627bb1ea546eeb9aa78feb8deefa4da19b143f29ce1dbdaf414504",
+          "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/d5/d58b5b7cefe86391513eee7ef1a2da592f60d41dbd24882d7a9663750afb4640"
+        },
+        "package.json": {
+          "before": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/44/446d0fb7ada3cb02a13898a1881c6360de70dbc07b10d2127608b78776f08e7e",
+          "after": "/Users/amirmusa/.cache/hyperframes/history/ef7f629d-bcef-4bb4-826b-e8fc1b329b5a/blobs/14/14506ff40ea23532b3a396a967063fa97d2433ea85e9aa4ddfcc3893db48df0c"
+        }
+      }
     }
   },
   "checks": {
     "latest": {
-      "revision": "9648c662-d4ce-45a9-8c9e-c7e6094b6226",
-      "id": "94461ec6-6fe5-4398-b8a1-6395ee86c562"
+      "revision": "e047ae56-3279-4f55-8561-b420af5a6c62",
+      "id": "4675c381-3020-4975-a3db-dc6a62a9d47a"
     },
     "revisions": {
       "77bac888-876e-4cba-a7b6-caeffbf02cfd": [
@@ -415,7 +434,6 @@
         {
           "id": "22a2b419-2e16-4c61-9836-f89e3b6ec8b5",
           "scope": "project",
-          "report": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/checks/22a2b419-2e16-4c61-9836-f89e3b6ec8b5.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -437,12 +455,13 @@
           "revision": "3b2d3006-0f22-4a12-bbe7-a5fee3110bbe",
           "inputFingerprint": "61b4500d5f36536fd8976c403609a6ce16b1ddfa225f34f12ad1651cd4ca69e3",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "0ab68d3c-fcdd-4fa7-a491-c78f55027777"
         },
         {
           "id": "a48c51c2-da00-47de-9089-7c60102bc1d1",
           "scope": "project",
-          "report": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/checks/a48c51c2-da00-47de-9089-7c60102bc1d1.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -464,7 +483,9 @@
           "revision": "3b2d3006-0f22-4a12-bbe7-a5fee3110bbe",
           "inputFingerprint": "61b4500d5f36536fd8976c403609a6ce16b1ddfa225f34f12ad1651cd4ca69e3",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "0ab68d3c-fcdd-4fa7-a491-c78f55027777"
         }
       ],
       "9648c662-d4ce-45a9-8c9e-c7e6094b6226": [
@@ -522,6 +543,35 @@
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
+      ],
+      "e047ae56-3279-4f55-8561-b420af5a6c62": [
+        {
+          "id": "4675c381-3020-4975-a3db-dc6a62a9d47a",
+          "scope": "project",
+          "report": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/.hyperframes/artifacts/checks/4675c381-3020-4975-a3db-dc6a62a9d47a.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792792579727,
+          "contentHash": "37bd78432b91b4496b497bb31838ea3a736ee6b5d722daa1bead21e5eb3f4c17",
+          "revision": "e047ae56-3279-4f55-8561-b420af5a6c62",
+          "inputFingerprint": "1abe97f8959fa866bcc7cae1123c66af7f6c2e82ea3620c899a68b6d6f2adff6",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
       ]
     },
     "unversioned": [
@@ -555,7 +605,10 @@
     ]
   },
   "snapshots": {
-    "latest": null,
+    "latest": {
+      "revision": "e047ae56-3279-4f55-8561-b420af5a6c62",
+      "id": "ebb8c401-82ff-4102-8952-19f8c403c472-1"
+    },
     "revisions": {
       "02b78b06-0d5a-4586-8e33-c082da49b5db": [
         {
@@ -1211,21 +1264,63 @@
           "status": "cleaned",
           "cleanedAfterRender": "22cfa392-c136-4910-8e9f-8c9bc544c637"
         }
+      ],
+      "e047ae56-3279-4f55-8561-b420af5a6c62": [
+        {
+          "scope": "full",
+          "id": "ebb8c401-82ff-4102-8952-19f8c403c472-0",
+          "image": "/private/tmp/claude-501/-Users-amirmusa-Projects-MacOS-podsbar/8675cc05-d044-499a-a4b1-c571e0dcff8b/scratchpad/vidsnap/frame-00-at-9.4s.png",
+          "time": 9.4,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792792594159,
+          "contentHash": "17f7f230826f76ec3d19aeb982e4017208f302cf4fd35d9ae815f2c70c9a5ad4",
+          "revision": "e047ae56-3279-4f55-8561-b420af5a6c62",
+          "inputFingerprint": "1abe97f8959fa866bcc7cae1123c66af7f6c2e82ea3620c899a68b6d6f2adff6",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "ebb8c401-82ff-4102-8952-19f8c403c472-1",
+          "image": "/private/tmp/claude-501/-Users-amirmusa-Projects-MacOS-podsbar/8675cc05-d044-499a-a4b1-c571e0dcff8b/scratchpad/vidsnap/frame-01-at-10.85s.png",
+          "time": 10.85,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1792792594160,
+          "contentHash": "68e521f43c50fc4cbee26ace974c8a6fc17c26272fcd11e242e9d086d5167fa2",
+          "revision": "e047ae56-3279-4f55-8561-b420af5a6c62",
+          "inputFingerprint": "1abe97f8959fa866bcc7cae1123c66af7f6c2e82ea3620c899a68b6d6f2adff6",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
       ]
     },
     "unversioned": []
   },
   "renders": {
     "latest": {
-      "id": "22cfa392-c136-4910-8e9f-8c9bc544c637",
-      "completedAt": 1792155444028,
+      "id": "0ab68d3c-fcdd-4fa7-a491-c78f55027777",
+      "completedAt": 1792792632823,
       "output": "/Users/amirmusa/Projects/MacOS/podsbar/videos/podsbar-launch/renders/podsbar-launch-light.mp4",
       "status": "completed",
-      "revision": "9648c662-d4ce-45a9-8c9e-c7e6094b6226"
+      "revision": "e047ae56-3279-4f55-8561-b420af5a6c62"
     },
     "retainedRevisions": [
-      "9648c662-d4ce-45a9-8c9e-c7e6094b6226",
-      "3b2d3006-0f22-4a12-bbe7-a5fee3110bbe"
+      "e047ae56-3279-4f55-8561-b420af5a6c62",
+      "9648c662-d4ce-45a9-8c9e-c7e6094b6226"
     ]
   },
   "pendingArtifactCleanup": []
