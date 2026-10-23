@@ -34,7 +34,7 @@ The product scene is a browser demonstration with illustrative battery readings.
 It does not access local Bluetooth devices. Display mode controls and the popover
 can be tried directly on the page.
 
-Download links point to the GitHub v1.1.0 release. Update those links and
+Download links point to the GitHub v1.2.0 release. Update those links and
 version-specific installation notes when a new app release is published. The
 current release is ad-hoc signed, not Apple-notarized; this is disclosed on the page.
 

@@ -6,6 +6,8 @@ AirPods battery, right in your Mac’s menu bar.
 
 <img src="docs/menubar.png" alt="PodsBar in the macOS menu bar" width="420">
 
+<img src="docs/popover.png" alt="The PodsBar popover: left, right, and case battery tiles, menu bar display options, and settings" width="292">
+
 Free and open source. Requires macOS 14+. Supports Apple silicon and Intel.
 
 
@@ -20,7 +22,9 @@ https://github.com/user-attachments/assets/4e9e4c1c-df37-4c14-bd9a-b653186aa67c
 
 Download the ZIP, unzip it, and move **PodsBar.app** to **Applications**. Open the app to see your battery levels in the menu bar.
 
-Version 1.1.0 is not notarized by Apple; macOS may block its first launch.
+Version 1.2.0 is not notarized by Apple; macOS may block its first launch.
+
+Already on 1.1.0 or later? Choose **Check for Updates…** in the popover to update in place.
 
 ## Build
 

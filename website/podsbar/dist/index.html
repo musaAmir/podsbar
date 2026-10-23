@@ -39,9 +39,9 @@
       <p class="eyebrow"><span class="status-dot"></span> A LITTLE UTILITY FOR YOUR MAC</p>
       <h1 id="hero-title">Your AirPods.<br><span>At a glance.</span></h1>
       <p class="hero-description">A little more battery clarity.<br>A lot less breaking your flow.</p>
-      <a class="button" href="https://github.com/musaAmir/podsbar/releases/download/v1.1.0/PodsBar-1.1.0.zip">Download for Mac <svg><use href="#arrow-down"/></svg></a>
+      <a class="button" href="https://github.com/musaAmir/podsbar/releases/download/v1.2.0/PodsBar-1.2.0.zip">Download for Mac <svg><use href="#arrow-down"/></svg></a>
       <p class="download-meta">Free & open source <span>·</span> macOS 14+</p>
-      <a class="release-note" href="#install-note">v1.1.0 · Not yet Apple-notarized <span aria-hidden="true">↗</span></a>
+      <a class="release-note" href="#install-note">v1.2.0 · Not yet Apple-notarized <span aria-hidden="true">↗</span></a>
 
       <div class="product-scene" aria-label="Interactive illustration of PodsBar on a Mac desktop">
         <div class="wallpaper-orb orb-one"></div><div class="wallpaper-orb orb-two"></div><div class="wallpaper-orb orb-three"></div>
@@ -83,18 +83,20 @@
           </svg>
         </div>
         <div class="app-popover" id="app-popover">
-          <div class="popover-device"><span class="green-dot"></span> Your AirPods Pro</div>
-          <div class="battery-row"><span>Left</span><span class="level-track"><i style="width:88%"></i></span><b>88%</b></div>
-          <div class="battery-row"><span>Right</span><span class="level-track"><i style="width:84%"></i></span><b>84%</b></div>
-          <div class="battery-row"><span>Case</span><span class="level-track"><i style="width:100%"></i></span><b>100%</b></div>
+          <div class="pop-header"><div><div class="popover-device">Your AirPods Pro</div><div class="pop-status"><span class="green-dot"></span><span id="demo-freshness" aria-live="polite">Connected · Updated 9:41</span></div></div><button class="demo-refresh" aria-label="Refresh example readings" type="button"><svg><use href="#refresh"/></svg></button></div>
+          <div class="pop-tiles">
+            <div class="pop-tile"><span class="pop-cell" style="--charge:88%"></span><b>88%</b><span>Left</span></div>
+            <div class="pop-tile"><span class="pop-cell" style="--charge:84%"></span><b>84%</b><span>Right</span></div>
+            <div class="pop-tile"><span class="pop-cell pop-case" style="--charge:100%"></span><b>100%</b><span>Case</span></div>
+          </div>
           <div class="popover-divider"></div>
-          <div class="refresh-row"><span id="demo-freshness" aria-live="polite">Updated at 9:41</span><button class="demo-refresh" aria-label="Refresh example readings" type="button"><svg><use href="#refresh"/></svg></button></div>
-          <label class="mode-label">Menu bar <select id="demo-mode" aria-label="Preview menu bar display mode"><option value="both">Both buds</option><option value="lowest">Lowest bud only</option><option value="none">No numbers</option></select></label>
-          <div class="popover-setting"><span class="mock-checkbox" aria-hidden="true">✓</span> Launch at login</div>
+          <div class="pop-label" id="pop-mode-label">Show in menu bar</div>
+          <div class="pop-segments" role="group" aria-labelledby="pop-mode-label"><button type="button" data-display="both" aria-pressed="true">Both buds</button><button type="button" data-display="lowest" aria-pressed="false">Lowest bud</button><button type="button" data-display="none" aria-pressed="false">Icon only</button></div>
+          <div class="pop-switch">Launch at login<span class="mock-switch" aria-hidden="true"></span></div>
+          <div class="pop-switch">Check for updates automatically<span class="mock-switch" aria-hidden="true"></span></div>
           <div class="popover-divider"></div>
-          <div class="popover-setting update-setting">Check for Updates…</div>
-          <div class="popover-setting auto-update"><span class="mock-checkbox" aria-hidden="true">✓</span> Check for updates automatically</div>
-          <div class="popover-setting quit-setting">Quit PodsBar</div>
+          <div class="pop-item">Check for Updates…<span>v1.2.0</span></div>
+          <div class="pop-item">Quit PodsBar<span>⌘Q</span></div>
         </div>
         <span class="scene-badge"><span class="status-dot"></span> Made to blend in.</span>
       </div>
@@ -112,11 +114,11 @@
       <div class="feature-layout">
         <div class="display-card">
           <div class="large-reading" aria-live="polite" aria-atomic="true"><span class="pod-reading" data-mode="both"><span class="reading-left">88<small>L</small></span><span class="mini-pods"><i style="--charge:88%"></i><i style="--charge:84%"></i></span><span class="reading-right"><small>R</small>84</span></span><span class="sr-only" id="display-description">Both buds: left 88 percent, right 84 percent.</span></div>
-          <div class="mode-tabs" role="group" aria-label="Try the menu bar display modes"><button type="button" data-display="both" aria-pressed="true">Both buds</button><button type="button" data-display="lowest" aria-pressed="false">Lowest bud</button><button type="button" data-display="none" aria-pressed="false">Just the pods</button></div>
+          <div class="mode-tabs" role="group" aria-label="Try the menu bar display modes"><button type="button" data-display="both" aria-pressed="true">Both buds</button><button type="button" data-display="lowest" aria-pressed="false">Lowest bud</button><button type="button" data-display="none" aria-pressed="false">Icon only</button></div>
           <div class="card-copy"><span class="mini-eyebrow">01 / YOUR MENU BAR, YOUR WAY</span><h3>A small detail.<br>A clear picture.</h3><p>Both percentages, the lowest bud, or simply two little capsules. Choose how much you see.</p></div>
         </div>
         <div class="feature-list">
-          <article><span class="feature-number">02</span><div><h3>Both buds. And the case.</h3><p>A quick click reveals individual battery levels, including the case when macOS reports it.</p></div></article>
+          <article><span class="feature-number">02</span><div><h3>Both buds. And the case.</h3><p>A quick click shows each bud and the case side by side, and flags a bud that’s running low. The case appears when macOS reports it.</p></div></article>
           <article><span class="feature-number">03</span><div><h3>Ready when you are.</h3><p>Launch at login, connect your AirPods, and get on with your day. No Dock icon to work around.</p></div></article>
           <article><span class="feature-number">04</span><div><h3>Little app. Kept up to date.</h3><p>Built-in update checks bring new releases to you. You choose when to download and install.</p></div></article>
         </div>
@@ -131,14 +133,14 @@
     <section class="questions wrap section-space" id="questions" aria-labelledby="questions-title"><div><p class="eyebrow">A FEW DETAILS</p><h2 id="questions-title">Good to know.</h2><p>Small app. Straight answers.</p></div>
       <div class="faq-list">
         <details><summary>Will it work on my Mac?<svg><use href="#plus"/></svg></summary><div class="answer"><p>PodsBar requires macOS 14 Sonoma or later and runs on both Apple silicon and Intel Macs. Connect your AirPods to your Mac to see their battery levels. AirPods Max and other headphones with a single battery show one reading.</p></div></details>
-        <details id="install-note"><summary>How do I install it?<svg><use href="#plus"/></svg></summary><div class="answer"><p>Download the ZIP, unzip it, and move PodsBar.app to your Applications folder. Open the app and look for the two little capsules in your menu bar. You can enable “Launch at login” in the popover.</p><p><strong>A note on the current release:</strong> version 1.1.0 is ad-hoc signed and has not been notarized by Apple. macOS may block its first launch. See the <a href="https://github.com/musaAmir/podsbar/releases/tag/v1.1.0" target="_blank" rel="noopener noreferrer">release notes</a> before downloading.</p></div></details>
+        <details id="install-note"><summary>How do I install it?<svg><use href="#plus"/></svg></summary><div class="answer"><p>Download the ZIP, unzip it, and move PodsBar.app to your Applications folder. Open the app and look for the two little capsules in your menu bar. You can enable “Launch at login” in the popover.</p><p><strong>A note on the current release:</strong> version 1.2.0 is ad-hoc signed and has not been notarized by Apple. macOS may block its first launch. See the <a href="https://github.com/musaAmir/podsbar/releases/tag/v1.2.0" target="_blank" rel="noopener noreferrer">release notes</a> before downloading.</p></div></details>
         <details><summary>Why isn’t my case battery showing?<svg><use href="#plus"/></svg></summary><div class="answer"><p>PodsBar displays the readings macOS provides. Case battery levels can be unavailable or out of date, especially while the case is closed. A dash means macOS hasn’t provided a reading.</p></div></details>
-        <details><summary>How do updates work?<svg><use href="#plus"/></svg></summary><div class="answer"><p>PodsBar uses Sparkle to check GitHub for updates daily. By default, it asks before downloading and installing. You can turn automatic checks off, or select “Check for Updates…” at any time in the app.</p><p>If you have an older version without the updater, download 1.1.0 manually once. Future updates can then arrive through the app.</p></div></details>
+        <details><summary>How do updates work?<svg><use href="#plus"/></svg></summary><div class="answer"><p>PodsBar uses Sparkle to check GitHub for updates daily. By default, it asks before downloading and installing. You can turn automatic checks off, or select “Check for Updates…” at any time in the app.</p><p>If you have a version older than 1.1.0, which has no updater, download the latest version manually once. Future updates then arrive through the app.</p></div></details>
         <details><summary>Is it really free?<svg><use href="#plus"/></svg></summary><div class="answer"><p>Yes. PodsBar is free and open source under the MIT license. No subscription, sign-up, or account. You can explore the code, report an issue, or contribute on <a href="https://github.com/musaAmir/podsbar" target="_blank" rel="noopener noreferrer">GitHub</a>.</p></div></details>
       </div>
     </section>
 
-    <section class="download-section wrap" id="download" aria-labelledby="download-title"><div class="download-panel"><img class="app-icon" src="assets/app-icon.png" alt="PodsBar app icon" width="92" height="92" loading="lazy"><p class="eyebrow">A LITTLE CLARITY GOES A LONG WAY.</p><h2 id="download-title">Back to your listening.</h2><p>Your AirPods battery, right where you need it.</p><a class="button" href="https://github.com/musaAmir/podsbar/releases/download/v1.1.0/PodsBar-1.1.0.zip">Download for Mac <svg><use href="#arrow-down"/></svg></a><p class="download-meta">v1.1.0 <span>·</span> macOS 14+ <span>·</span> Apple silicon & Intel</p><a class="release-note" href="#install-note">Not yet Apple-notarized. Read the installation note <span aria-hidden="true">↗</span></a></div></section>
+    <section class="download-section wrap" id="download" aria-labelledby="download-title"><div class="download-panel"><img class="app-icon" src="assets/app-icon.png" alt="PodsBar app icon" width="92" height="92" loading="lazy"><p class="eyebrow">A LITTLE CLARITY GOES A LONG WAY.</p><h2 id="download-title">Back to your listening.</h2><p>Your AirPods battery, right where you need it.</p><a class="button" href="https://github.com/musaAmir/podsbar/releases/download/v1.2.0/PodsBar-1.2.0.zip">Download for Mac <svg><use href="#arrow-down"/></svg></a><p class="download-meta">v1.2.0 <span>·</span> macOS 14+ <span>·</span> Apple silicon & Intel</p><a class="release-note" href="#install-note">Not yet Apple-notarized. Read the installation note <span aria-hidden="true">↗</span></a></div></section>
   </main>
 
   <footer class="footer wrap"><div class="footer-top"><a class="brand" href="#"><span class="brand-glyph" aria-hidden="true"><i></i><i></i></span>PodsBar</a><span>A little utility. A nicer everyday.</span><div><a href="https://github.com/musaAmir/podsbar" target="_blank" rel="noopener noreferrer">Source code <svg><use href="#arrow-up-right"/></svg></a><a href="https://github.com/musaAmir/podsbar/issues" target="_blank" rel="noopener noreferrer">Report an issue <svg><use href="#arrow-up-right"/></svg></a></div></div><div class="footer-bottom"><span>Made for the Mac. Free & open source.</span><span>PodsBar is an independent app, not affiliated with Apple. AirPods is a trademark of Apple Inc.</span></div></footer>
