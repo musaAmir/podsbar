@@ -1,3 +1,6 @@
+
+
+
 # PodsBar
 
 AirPods battery, right in your Mac’s menu bar.
@@ -14,7 +17,7 @@ Free and open source. Requires macOS 14+. Supports Apple silicon and Intel.
 See it in action:
 
 
-https://github.com/user-attachments/assets/4e9e4c1c-df37-4c14-bd9a-b653186aa67c
+https://github.com/user-attachments/assets/190ce860-288c-4ac8-a680-6fd76d6d9c2b
 
 
 
