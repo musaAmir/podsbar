@@ -38,22 +38,38 @@
     .g03-pod-in { position: absolute; inset: 3px; border-radius: 10px; overflow: hidden; }
     .g03-fill { position: absolute; left: 0; right: 0; bottom: 0; height: 100%; background: #242527; transform-origin: 50% 100%; }
 
-    /* Popover at 2.4x — PopoverView.swift is 244pt wide with 12pt padding. */
-    .g03-pop { position: absolute; top: 118px; left: 50%; margin-left: -293px; width: 586px; padding: 29px; border-radius: 30px;
+    /* Popover at 1.8x — PopoverView.swift is 292pt wide with 14pt padding. */
+    .g03-pop { position: absolute; top: 118px; left: 50%; margin-left: -263px; width: 526px; padding: 25px; border-radius: 26px;
       background: linear-gradient(180deg, rgba(44,45,52,0.97), rgba(32,33,38,0.97));
       border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 40px 90px -20px rgba(47,47,57,0.45); transform-origin: 50% 0%;
-      font-size: 26px; font-weight: 500; color: rgba(245,245,247,0.9); }
-    .g03-title { font-size: 31px; font-weight: 600; color: #F5F5F7; margin-bottom: 18px; }
-    .g03-row { display: flex; align-items: center; height: 46px; }
-    .g03-lbl { width: 96px; color: rgba(245,245,247,0.6); }
-    .g03-track { position: relative; flex: 1; height: 14px; border-radius: 7px; background: rgba(255,255,255,0.12); overflow: hidden; }
-    .g03-bfill { position: absolute; inset: 0; border-radius: 7px; background: rgba(235,235,245,0.85); transform-origin: 0 50%; }
-    .g03-val { width: 90px; text-align: right; font-variant-numeric: tabular-nums; color: #F5F5F7; }
-    .g03-div { height: 1px; background: rgba(255,255,255,0.10); margin: 19px 0; }
-    .g03-muted { color: rgba(245,245,247,0.55); }
-    .g03-line { display: flex; align-items: center; justify-content: space-between; height: 50px; }
-    .g03-select { display: flex; align-items: center; gap: 14px; padding: 6px 18px; border-radius: 12px; background: rgba(255,255,255,0.12); }
-    .g03-check { display: inline-block; width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); margin-right: 16px; vertical-align: middle; }
+      font-size: 24px; font-weight: 500; color: #F5F5F7; display: flex; flex-direction: column; gap: 25px; }
+    .g03-muted { color: rgba(245,245,247,0.6); }
+    .g03-head-row { display: flex; align-items: center; gap: 18px; }
+    .g03-head-row > div { flex: 1; }
+    .g03-title { font-size: 24px; font-weight: 600; }
+    .g03-pstatus { display: flex; align-items: center; gap: 11px; margin-top: 5px; font-size: 20px; }
+    .g03-dot { width: 11px; height: 11px; border-radius: 50%; background: #30D158; }
+    .g03-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .g03-tile { display: flex; flex-direction: column; align-items: center; padding: 25px 0 22px; border-radius: 22px; background: rgba(255,255,255,0.06); }
+    .g03-cellbox { height: 86px; display: flex; align-items: flex-end; }
+    .g03-cell { position: relative; width: 40px; height: 86px; border: 3px solid rgba(245,245,247,0.5); border-radius: 20px; }
+    .g03-cell.g03-case { width: 61px; height: 72px; border-radius: 18px; }
+    .g03-cfill { position: absolute; inset: 4.5px; border-radius: 14px; background: #F5F5F7; transform-origin: 50% 100%; }
+    .g03-case .g03-cfill { border-radius: 12px; }
+    .g03-pct { margin-top: 18px; font-size: 40px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .g03-tlbl { margin-top: 4px; font-size: 20px; }
+    .g03-div { height: 1px; background: rgba(255,255,255,0.10); }
+    .g03-settings { display: flex; flex-direction: column; gap: 14px; }
+    .g03-slbl { font-size: 20px; font-weight: 600; margin-bottom: -3px; }
+    .g03-seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 14px; background: rgba(255,255,255,0.09); }
+    .g03-seg span { height: 43px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 21px; white-space: nowrap; }
+    .g03-seg .g03-on { background: #5A5A5E; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+    .g03-line { display: flex; align-items: center; justify-content: space-between; height: 47px; }
+    .g03-switch { position: relative; width: 58px; height: 34px; border-radius: 17px; background: #0A84FF; }
+    .g03-switch::after { content: ""; position: absolute; top: 3px; right: 3px; width: 28px; height: 28px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+    .g03-foot { display: flex; flex-direction: column; margin-top: -8px; }
+    .g03-foot .g03-line { height: 47px; }
+    .g03-foot small { font-size: 20px; }
 
     .g03-copy { position: absolute; left: 170px; top: 430px; width: 700px; }
     .g03-head { font-size: 132px; font-weight: 800; letter-spacing: -0.055em; line-height: 1; }
@@ -93,18 +109,27 @@
                 <span class="g03-let">R</span><span class="g03-num g03-r" id="g03-nr">84</span>
               </div>
               <div class="g03-pop" id="g03-pop">
-                <div class="g03-title">AirPods Pro</div>
-                <div class="g03-row"><span class="g03-lbl">Left</span><div class="g03-track"><div class="g03-bfill" id="g03-b1"></div></div><span class="g03-val">88%</span></div>
-                <div class="g03-row"><span class="g03-lbl">Right</span><div class="g03-track"><div class="g03-bfill" id="g03-b2"></div></div><span class="g03-val">84%</span></div>
-                <div class="g03-row"><span class="g03-lbl">Case</span><div class="g03-track"><div class="g03-bfill" id="g03-b3"></div></div><span class="g03-val">100%</span></div>
-                <div class="g03-div"></div>
-                <div class="g03-line g03-muted"><span>Updated just now</span>
-                  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="rgba(245,245,247,0.55)" stroke-width="2" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4.5h-4.5"/></svg>
+                <div class="g03-head-row">
+                  <div><div class="g03-title">AirPods Pro</div><div class="g03-pstatus g03-muted"><span class="g03-dot"></span>Connected · Updated 9:41</div></div>
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="rgba(245,245,247,0.6)" stroke-width="2" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4.5h-4.5"/></svg>
                 </div>
-                <div class="g03-line"><span>Menu bar</span><span class="g03-select">Both buds <span class="g03-muted">⌃⌄</span></span></div>
-                <div class="g03-line" style="justify-content:flex-start"><span class="g03-check"></span><span>Launch at login</span></div>
+                <div class="g03-tiles">
+                  <div class="g03-tile"><div class="g03-cellbox"><div class="g03-cell"><div class="g03-cfill" id="g03-b1"></div></div></div><div class="g03-pct">88%</div><div class="g03-tlbl g03-muted">Left</div></div>
+                  <div class="g03-tile"><div class="g03-cellbox"><div class="g03-cell"><div class="g03-cfill" id="g03-b2"></div></div></div><div class="g03-pct">84%</div><div class="g03-tlbl g03-muted">Right</div></div>
+                  <div class="g03-tile"><div class="g03-cellbox"><div class="g03-cell g03-case"><div class="g03-cfill" id="g03-b3"></div></div></div><div class="g03-pct">100%</div><div class="g03-tlbl g03-muted">Case</div></div>
+                </div>
                 <div class="g03-div"></div>
-                <div class="g03-line g03-muted"><span>Quit PodsBar</span></div>
+                <div class="g03-settings">
+                  <div class="g03-slbl g03-muted">Show in menu bar</div>
+                  <div class="g03-seg"><span class="g03-on">Both buds</span><span>Lowest bud</span><span>Icon only</span></div>
+                  <div class="g03-line"><span>Launch at login</span><span class="g03-switch"></span></div>
+                  <div class="g03-line"><span>Check for updates automatically</span><span class="g03-switch"></span></div>
+                </div>
+                <div class="g03-div"></div>
+                <div class="g03-foot">
+                  <div class="g03-line"><span>Check for Updates…</span><small class="g03-muted">v1.2.0</small></div>
+                  <div class="g03-line"><span>Quit PodsBar</span><small class="g03-muted">⌘Q</small></div>
+                </div>
               </div>
             </div>
             <span>Fri Sep 4&nbsp;&nbsp;9:41</span>
@@ -147,14 +172,15 @@
       tl.fromTo("#g03-body", { y: 30, opacity: 0, filter: "blur(8px)" },
         { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, B(6));
 
-      // Bar 3 — click: item highlights, the popover drops, bars fill on the following beats.
+      // Bar 3 — click: item highlights, the popover drops, tiles fill on the following beats.
       tl.fromTo("#g03-hilite", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power2.out" }, B(8));
       tl.fromTo("#g03-item", { scale: 1 }, { scale: 0.96, duration: 0.08, ease: "power2.out" }, B(8));
       tl.fromTo("#g03-item", { scale: 0.96 }, { scale: 1, duration: 0.2, ease: "power2.out", immediateRender: false }, B(8) + 0.08);
       tl.fromTo("#g03-pop", { y: -24, scaleY: 0.9, opacity: 0, filter: "blur(8px)" },
         { y: 0, scaleY: 1, opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, B(8) + 0.05);
+      // Each tile's capsule fills from the bottom, one per half-beat, like the glyph above.
       ["#g03-b1", "#g03-b2", "#g03-b3"].forEach((id, i) => {
-        tl.fromTo(id, { scaleX: 0 }, { scaleX: [0.88, 0.84, 1][i], duration: 0.8, ease: "power3.out" }, B(9) + i * 0.225);
+        tl.fromTo(id, { scaleY: 0 }, { scaleY: [0.88, 0.84, 1][i], duration: 0.8, ease: "power3.out" }, B(9) + i * 0.225);
       });
 
       // Slow drift to the end so the hero never freezes.
