@@ -283,7 +283,7 @@ struct PopoverView: View {
 
 /// One battery as a tile: a capsule that fills from the bottom, the percentage, and a label.
 /// The capsule echoes the menu bar glyph so the two read as the same thing.
-private struct BatteryTile: View {
+struct BatteryTile: View {
     let label: String
     let level: Int?
     var isCase = false
@@ -314,6 +314,13 @@ private struct BatteryTile: View {
     private var isLow: Bool { level.map { $0 <= MenuBarIcon.lowThreshold } ?? false }
     private var tint: Color { isLow ? .red : .primary }
 
+    /// How full to draw the capsule, or nil to leave it empty.
+    static func fillFraction(for level: Int?) -> CGFloat? {
+        guard let level, level > 0 else { return nil }
+        // Keep a sliver visible at very low levels, as the menu bar glyph does.
+        return CGFloat(max(8, min(level, 100))) / 100
+    }
+
     private var cell: some View {
         let width: CGFloat = isCase ? 34 : 22
         let height: CGFloat = isCase ? 40 : 48
@@ -325,9 +332,7 @@ private struct BatteryTile: View {
             RoundedRectangle(cornerRadius: radius, style: .continuous)
                 .strokeBorder(isLow ? Color.red : Color.primary.opacity(level == nil ? 0.25 : 0.45), lineWidth: 1.5)
 
-            if let level {
-                // Keep a sliver visible at very low levels, as the menu bar glyph does.
-                let fraction = CGFloat(max(8, min(level, 100))) / 100
+            if let fraction = Self.fillFraction(for: level) {
                 RoundedRectangle(cornerRadius: radius - 3, style: .continuous)
                     .fill(tint)
                     .frame(height: (height - inset * 2) * fraction)
